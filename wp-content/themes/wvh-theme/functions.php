@@ -9,7 +9,7 @@ if (!isset($content_width)) $content_width = 770;
 
 /**
  * upbootwp_setup function.
- * 
+ *
  * @access public
  * @return void
  */
@@ -32,8 +32,8 @@ function upbootwp_setup() {
 		'topmenu' => __( 'Top Menu', 'Top Menu' ),
 		'mainmenu' => __( 'Main Menu', 'Main Menu' ),
 	) );
-	
-	
+
+
 }
 
 add_action( 'after_setup_theme', 'upbootwp_setup' );
@@ -92,11 +92,9 @@ function wvhc_widgets_init() {
 add_action( 'widgets_init', 'wvhc_widgets_init' );
 
 function upbootwp_scripts() {
-	wp_enqueue_style( 'bootstrap-css', get_template_directory_uri().'/css/bootstrap.min.css', array(), '1.1');
+	wp_enqueue_style( 'bootstrap-css', get_template_directory_uri().'/css/bootstrap.css', array(), '1.1');
 	wp_enqueue_style( 'wvh-css', get_template_directory_uri().'/css/style.css', array(), '1.1');
-	//wp_enqueue_script( 'upbootwp-jQuery', get_template_directory_uri().'/js/jquery.js',array(),'2.0.3',true);
-	wp_enqueue_script( 'upbootwp-basefile', get_template_directory_uri().'/js/bootstrap.min.js',array(),'1.1',true);
-	wp_enqueue_script( 'wvh-js', get_template_directory_uri().'/js/wvh-parallax.js',array(),'1.1',true);
+	wp_enqueue_script( 'upbootwp-basefile', get_template_directory_uri().'/js/bootstrap.min.js',array( 'jquery' ));
 }
 add_action( 'wp_enqueue_scripts', 'upbootwp_scripts' );
 
@@ -281,7 +279,7 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 	}
 }
 function calendar_widgets_init() {
- 
+
 	register_sidebar( array(
 		'name' => 'Calendar Sidebar',
 		'id' => 'calendar_sidebar',

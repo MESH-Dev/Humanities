@@ -2,11 +2,11 @@
 	HTML5 Reset :: style.css
 	----------------------------------------------------------
 	We have learned much from/been inspired by/taken code where offered from:
-	
+
 	Eric Meyer					:: http://meyerweb.com
 	HTML5 Doctor				:: http://html5doctor.com
 	and the HTML5 Boilerplate	:: http://html5boilerplate.com
-	
+
 -------------------------------------------------------------------------------*/
 
 /* Let's default this puppy out
@@ -24,14 +24,14 @@ html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquot
 
 article, aside, figure, footer, header, nav, section, details, summary {display: block;}
 
-/* Handle box-sizing while better addressing child elements: 
+/* Handle box-sizing while better addressing child elements:
    http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
 html {
 	box-sizing: border-box;
 }
 
-*, 
-*:before, 
+*,
+*:before,
 *:after {
 	box-sizing: inherit;
 }
@@ -50,15 +50,15 @@ html {
 overflow-x: hidden;
 }
 
-/* we use a lot of ULs that aren't bulleted. 
+/* we use a lot of ULs that aren't bulleted.
 	don't forget to restore the bullets within content. */
 
 
 blockquote, q {quotes: none;}
 
-blockquote:before, 
-blockquote:after, 
-q:before, 
+blockquote:before,
+blockquote:after,
+q:before,
 q:after {content: ''; content: none;}
 
 a {margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent;}
@@ -93,7 +93,7 @@ small {font-size: 85%;}
 
 strong {font-weight: bold;}
 
-td, td img {vertical-align: top;} 
+td, td img {vertical-align: top;}
 
 /* Make sure sup and sub don't mess with your line-heights http://gist.github.com/413930 */
 sub, sup {font-size: 75%; line-height: 0; position: relative;}
@@ -105,10 +105,10 @@ pre, code, kbd, samp {font-family: monospace, sans-serif;}
 
 /* hand cursor on clickable elements */
 .clickable,
-label, 
-input[type=button], 
-input[type=submit], 
-input[type=file], 
+label,
+input[type=button],
+input[type=submit],
+input[type=file],
 button {cursor: pointer;}
 
 /* Webkit browsers add a 2px margin outside the chrome of form elements */
@@ -117,19 +117,19 @@ button, input, select, textarea {margin: 0;}
 /* make buttons play nice in IE */
 button,
 input[type=button] {width: auto; overflow: visible;}
- 
+
 /* scale images in IE7 more attractively */
 .ie7 img {-ms-interpolation-mode: bicubic;}
 
-/* prevent BG image flicker upon hover 
+/* prevent BG image flicker upon hover
    (commented out as usage is rare, and the filter syntax messes with some pre-processors)
 .ie6 html {filter: expression(document.execCommand("BackgroundImageCache", false, true));}
 */
 
 /* let's clear some floats */
-.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }  
-.clearfix:after { clear: both; }  
-.clearfix { zoom: 1; }  
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
 
 
 
@@ -245,6 +245,7 @@ p a:hover {
 	margin-top: 30px;
 	margin-bottom: 200px;
 }
+
 .top-nav{
 	background:#3D4235;
 	height:15px;
@@ -254,14 +255,26 @@ p a:hover {
 	height: 20px;
 	font-weight: bold;
 	line-height:15px;
-	padding-right: 80px;
-	margin-left: -15px;
+
 }
+
+@media screen and (min-width: 480px) {
+	.top-nav{
+		padding-right: 80px;
+	}
+}
+
+@media screen and (max-width: 479px) {
+	.top-nav{
+		text-align: left;
+		font-weight: bold;
+		line-height:15px;
+	}
+}
+
 .main-nav{
 	background:#B0AF93;
-	height:84px;
 	padding-right: 0px;
-	margin-left: -15px;
 }
 .nav-container{
 	width:920px;
@@ -304,11 +317,11 @@ p a:hover {
 }
 .homepage-item.color h1, .homepage-item.photobox h1{
 	color:#ffffff;
-	
+
 }
 .homepage-item.color.nobox h1{
 	color:#363636;
-	
+
 }
 .homepage-item.nobox{
 	/*padding-left: 15px;
@@ -383,32 +396,62 @@ p a:hover {
 }
 .main-nav.menu li:hover a{
 	color: #34372D;
-	
+
 }
-.main-nav.menu li a {
+#menu-main-navigation > li > a {
 	color:#ffffff;
-	font-size: 18pt;
-	border-left: dotted white 1px;
-	height: 84px;
-	line-height: 50px;
+	font-size: 24px;
+	border-left: dotted white 2px;
+	line-height: 56px;
 }
-.main-nav.menu li a:hover{
+#menu-main-navigation > li > a:hover{
 	text-decoration:none;
 	color: #34372D;
 }
+
+.main-nav.menu li > ul {
+	padding: 10px 0;
+}
+
+.main-nav.menu li > ul > li {
+	background-color: #C2C1A7;
+}
+
+.main-nav.menu li > ul > li:first-child {
+	padding-top: 15px;
+}
+
+.main-nav.menu li > ul > li:last-child {
+	padding-bottom: 25px;
+}
+
+
+.main-nav.menu li > ul > li > a {
+	font-size: 20px;
+	line-height: 30px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.main-nav.menu li > ul li a:hover {
+	text-decoration: none;
+	color: #34372D;
+}
+
 .top-nav li{
-	margin-right:30px;
+	margin-right:25px;
 	display: inline;
 	line-height: 18px;
 }
 .top-nav li a{
-	font-size: 10pt;
+	font-size: 12px;
 	color: #B0AF93;
 }
 .top-nav li:after {
     position: absolute; /* Prevent underline of arrow */
-    padding-left:2px; /* Add a little space between text and arrow */
+    padding-left:3px; /* Add a little space between text and arrow */
     content: "\00bb"; /* Unicode hex for &raquo; */
+		padding-top: 2px;
 }
 .footer-container .footer-address{
 	color: #AFAF93;
@@ -622,7 +665,7 @@ p a:hover {
 
 .ribbon:before, .ribbon:after {
   content: "";
-  border-top:   3px solid #6e8900;   
+  border-top:   3px solid #6e8900;
   border-left:  3px solid transparent;
   border-right: 3px solid transparent;
   position:absolute;
@@ -881,11 +924,10 @@ input[type=submit].brown, input[type=button].brown{
 	font-family: "NerisBlack", Arial, Sans-Serif;
  }
  .dropdown-menu li{
- 	height:50px;
+
  }
   .dropdown-menu li a{
- 	height:auto;
- 	max-height:50px;
+
  }
  .dropdown-menu li:hover a{
  	color: #76908F!important;
@@ -939,14 +981,14 @@ input[type=submit].brown, input[type=button].brown{
 .calendar-current-month{
 	float:left;
 	width:50%;
-	
+
 }
 .calendar-header{
 	color:#AD6B15;
 	font-size:24pt;
 	font-family: "NerisBlack", Arial, Sans-Serif;
 }
-.calendar-current-month a{ 
+.calendar-current-month a{
 	font-family: "ClarendonLight", Times, Serif;
 	font-weight:normal;
 	color:#232323;
@@ -1091,7 +1133,7 @@ padding: 5px 15px 6px 15px;
 	background-color: #AE6C15;
 }
 
-.tribe-mini-calendar-grid-wrapper table.tribe-mini-calendar .tribe-mini-calendar-nav,  
+.tribe-mini-calendar-grid-wrapper table.tribe-mini-calendar .tribe-mini-calendar-nav,
 .tribe-mini-calendar-grid-wrapper table.tribe-mini-calendar .tribe-mini-calendar-nav td {
 	border: none !important;
 	background-color: #D7BD9A;
@@ -1197,7 +1239,7 @@ body.events-list .contentpage.titlebar{
 #tribe-events .tribe-events-button, .tribe-events-button {
 	display:none;
 }
-.tribe-events-content-filterbar { 
+.tribe-events-content-filterbar {
     text-transform: uppercase;
     font-family: "NerisBlack", Arial, Sans-Serif;
     color:#4f4e4d;
@@ -1210,7 +1252,7 @@ body.events-list .contentpage.titlebar{
 		font-size: 13px; margin-right:10px; line-height:18px;
 	}
 	.tribe-events-content-filterbar input[type=checkbox] {
-		display:none; 
+		display:none;
 	}
 	.tribe-events-content-filterbar label span.checkbox {
 	  content: "";

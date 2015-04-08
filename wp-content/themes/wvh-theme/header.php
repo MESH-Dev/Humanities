@@ -13,11 +13,10 @@
 <body <?php body_class(); ?>>
 <?php do_action( 'before' ); ?>
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-	<div class="nav-container container">
+	<div class="container">
 	    <div class="row">
 	        <div class="col-md-12 top-nav">
-	        <?php wp_nav_menu( array( 'theme_location' => 'topmenu' ) ); ?>
-
+	        	<?php wp_nav_menu( array( 'theme_location' => 'topmenu' ) ); ?>
 	        </div>
 	    </div>
 	    <div class="row">
@@ -31,7 +30,7 @@
 	    	<?php wp_nav_menu( array( 'theme_location' => 'mainmenu', 'menu_class' => 'nav navbar-nav', 'walker' => new wp_bootstrap_navwalker() ) ); ?>
 	    		<a href="#" class="ewv-link">e-WV</a>
           	</div><!--/.nav-collapse -->
-	    		
+
 	    	</div>
 	    </div>
 
