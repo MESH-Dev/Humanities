@@ -39,7 +39,7 @@ get_header();?>
 					<h1>'.$page_heading.'</h1><h4>'.$page_subheading.'</h4>
 					</div>
 					</div>
-					
+
 				</div>
 			</div>';
 			endwhile;
@@ -51,11 +51,11 @@ get_header();?>
       <div class="row">
         <div class="col-md-8">
 			<?php the_content(); ?>
-			</div> 
+			</div>
                <div class="col-md-4">
                <?php while (have_posts()) : the_post();
 
-						
+
 
 					echo '<div class="landingpage-item photobox '.$sidebar_color.'">
 		                  <div class="image">
@@ -68,7 +68,7 @@ get_header();?>
 		                  </div>
 		                </div>';
 
-					
+
 							endwhile;
 				?>
 
@@ -99,7 +99,7 @@ get_header();?>
 				                    <a href="'.$sidebar_link_url.'">'.$sidebar_link_text.'</a></p>
 				                  </div>
 				                </div>';
-				                
+
 					    endwhile;
 
 					else :
@@ -109,7 +109,7 @@ get_header();?>
 					endif;
 
 					?>
-	               	
+
                </div>
         </div>
       </div>
