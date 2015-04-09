@@ -11,8 +11,11 @@
 </head>
 
 <body <?php body_class(); ?>>
+
+<div class="wrapper">
+
 <?php do_action( 'before' ); ?>
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-default" role="navigation">
 	<div class="container">
 	    <div class="row">
 	        <div class="col-md-12 top-nav">

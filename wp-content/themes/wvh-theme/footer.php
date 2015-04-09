@@ -1,7 +1,8 @@
-<div class="container footer-container">
+<div class="footer-container">
+  <div class="container">
     <div class="row">
         <div class="col-md-3">
-					<img src="../wp-content/themes/wvh-theme/img/online-catalog.png" class="alignleft">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/online-catalog.png" class="alignleft">
       		<p>Get your copy of the Encyclopedia and DVD In our <a href="#">Online Store &raquo;</a></p>
         </div>
         <div class="col-md-3 middle">
@@ -16,8 +17,12 @@
         	<span class="footer-phone">304-346-8500 (T) | 304-346-8504 (F)</span>
         </div>
     </div>
+  </div>
 </div>
 
 <?php wp_footer(); ?>
+
+</div>
+
 </body>
 </html>

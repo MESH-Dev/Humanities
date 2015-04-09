@@ -30,6 +30,10 @@ html {
 	box-sizing: border-box;
 }
 
+html, body {
+	height: 100%;
+}
+
 *,
 *:before,
 *:after {
@@ -282,6 +286,7 @@ p a:hover {
 .navbar-default{
 	background-color:transparent;
 	border:none;
+	z-index: 1;
 }
 .footer-container{
 	background:url('../img/wvhc-background.png') repeat;
@@ -293,7 +298,12 @@ p a:hover {
 	min-height: 100px;
 	padding-top: 10px;
 	padding-bottom: 10px;
+	height: 155px;
 }
+.push {
+	height: 155px;
+}
+
 .footer-container .container{
 	width: 960px;
 }
@@ -992,7 +1002,6 @@ input[type=submit].brown, input[type=button].brown{
 
 }
 .content-container{
-	margin-top:125px;
 	z-index: -1;
 }
 
@@ -1275,4 +1284,11 @@ body.events-list .contentpage.titlebar{
 	line-height: 11px;
 	font-size: 15px;
 	color: #847B73;
+}
+
+.wrapper {
+	min-height: 100%;
+	height: auto !important; /* This line and the next line are not necessary unless you need IE6 support */
+	height: 100%;
+	margin: 0 auto -155px; /* the bottom margin is the negative value of the footer's height */
 }

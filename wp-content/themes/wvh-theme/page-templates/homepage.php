@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Template Name: Page - Homepage
  * The template used for displaying page content in page.php
@@ -52,7 +52,7 @@ get_header(); ?>
 					endif;
 
 					?>
-            
+
           </div>
         </div>
         <div class="col-md-6 home-right-half">
@@ -69,7 +69,7 @@ get_header(); ?>
 					    while ( have_rows('homepage_items_col_1') ) : the_row();
 
 					        // display a sub field value
-							$block_type = get_sub_field('block_type');
+			            $block_type = get_sub_field('block_type');
 					        $content_type = get_sub_field('content_type');
 					        $image = get_sub_field('image');
 					        $title = get_sub_field('title');
@@ -79,37 +79,67 @@ get_header(); ?>
 
 					        echo '<div class="homepage-item '.$block_type.' '. $content_type.'">';
 
-					        if ($block_type == "caption"){
+                  if ($block_type == "caption"){
+                  ?>
 
-					        	echo '<div class="image">
-					                    <img src="'.$image.'">
-					                  </div>
-					                  <div class="text">
-					                    '.$title.'
-					                  </div>
-					                </div>';
+                    <?php if($image != "") { ?>
+                      <div class="image">
+                          <img src="<?php echo $image; ?>" />
+                      </div>
+                    <?php } ?>
+
+                    <?php if($title != "") { ?>
+                      <div class="text">
+  	                    <?php echo $title; ?>
+  	                  </div>
+                    <?php } ?>
+
+                  <?php
 					        }
 					        if ($block_type == "photobox"){
+                  ?>
 
-			                  echo '<div class="image">
-			                    		<img src="'.$image.'">
-					                </div>
-					                <div class="text">
-					                  <h1>'.$title.' &raquo;</h1>
-					                  <p>'.$description.' <br><a href="'.$link_address.'">'.$link_text.' &raquo;</a></p>
-					                </div>
-			                	    </div>';
-			            	}
-			            	if ($block_type == "color"){
-
-			                  echo '<div class="text">
-					                  <h1>'.$title.' &raquo;</h1>
-					                  <p>'.$description.' <br><a href="'.$link_address.'">'.$link_text.' &raquo;</a></p>
-					                </div>
-			                	    </div>';
-			            	}
+                    <?php if($image != "") { ?>
+                      <div class="image">
+                          <img src="<?php echo $image; ?>" />
+                      </div>
+                    <?php } ?>
 
 
+                    <div class="text">
+                      <?php if($title != "") { ?>
+                        <h1><?php echo $title; ?> &raquo;</h1>
+                      <?php } ?>
+                      <?php if ($description != "") { ?>
+                        <p><?php echo $description ?></p>
+                      <?php } ?>
+                      <?php if (($link_address != "") && ($link_text != "")) { ?>
+                        <p><a href="<?php echo $link_address; ?>"><?php echo $link_text; ?> &raquo;</a></p>
+                      <?php } ?>
+                    </div>
+
+                  <?php
+		            	}
+			            if ($block_type == "color"){
+                  ?>
+
+                    <div class="text">
+
+                      <?php if($title != "") { ?>
+                        <h1><?php echo $title; ?> &raquo;</h1>
+                      <?php } ?>
+                      <?php if ($description != "") { ?>
+                        <p><?php echo $description; ?></p>
+                      <?php } ?>
+                      <?php if (($link_address != "") && ($link_text != "")) { ?>
+                        <p><a href="<?php echo $link_address; ?>"><?php echo $link_text; ?> &raquo;</a></p>
+                      <?php } ?>
+                    </div>
+
+                  <?php
+		            	}
+
+                  echo '</div>';
 
 					    endwhile;
 
@@ -124,8 +154,8 @@ get_header(); ?>
             </div>
             <div class="col-md-6">
               <div class="row">
-                
-                
+
+
 					<?php
 
 					// check if the repeater field has rows of data
@@ -135,7 +165,7 @@ get_header(); ?>
 					    while ( have_rows('homepage_items_col_2') ) : the_row();
 
 					        // display a sub field value
-							$block_type = get_sub_field('block_type');
+			            $block_type = get_sub_field('block_type');
 					        $content_type = get_sub_field('content_type');
 					        $image = get_sub_field('image');
 					        $title = get_sub_field('title');
@@ -145,37 +175,67 @@ get_header(); ?>
 
 					        echo '<div class="homepage-item '.$block_type.' '. $content_type.'">';
 
-					        if ($block_type == "caption"){
+                  if ($block_type == "caption"){
+                  ?>
 
-					        	echo '<div class="image">
-					                    <img src="'.$image.'">
-					                  </div>
-					                  <div class="text">
-					                    '.$title.'
-					                  </div>
-					                </div>';
+                    <?php if($image != "") { ?>
+                      <div class="image">
+                          <img src="<?php echo $image; ?>" />
+                      </div>
+                    <?php } ?>
+
+                    <?php if($title != "") { ?>
+                      <div class="text">
+  	                    <?php echo $title; ?>
+  	                  </div>
+                    <?php } ?>
+
+                  <?php
 					        }
 					        if ($block_type == "photobox"){
+                  ?>
 
-			                  echo '<div class="image">
-			                    		<img src="'.$image.'">
-					                </div>
-					                <div class="text">
-					                  <h1>'.$title.'</h1>
-					                  <p>'.$description.' <br><a href="'.$link_address.'">'.$link_text.' &raquo;</a></p>
-					                </div>
-			                	    </div>';
-			            	}
-			            	if ($block_type == "color"){
-
-			                  echo '<div class="text">
-					                  <h1>'.$title.'</h1>
-					                  <p>'.$description.' <br><a href="'.$link_address.'">'.$link_text.' &raquo;</a></p>
-					                </div>
-			                	    </div>';
-			            	}
+                    <?php if($image != "") { ?>
+                      <div class="image">
+                          <img src="<?php echo $image; ?>" />
+                      </div>
+                    <?php } ?>
 
 
+
+
+                    <div class="text">
+                      <?php if($title != "") { ?>
+                        <h1><?php echo $title; ?> &raquo;</h1>
+                      <?php } ?>
+                      <?php if ($description != "") { ?>
+                        <p><?php echo $description ?></p>
+                      <?php } ?>
+                      <?php if (($link_address != "") && ($link_text != "")) { ?>
+                        <p><a href="<?php echo $link_address; ?>"><?php echo $link_text; ?> &raquo;</a></p>
+                      <?php } ?>
+                    </div>
+
+                  <?php
+		            	}
+			            if ($block_type == "color"){
+                  ?>
+
+                    <div class="text">
+
+                      <?php if($title != "") { ?>
+                        <h1><?php echo $title; ?> &raquo;</h1>
+                      <?php } ?>
+                      <?php if ($description != "") { ?>
+                        <p><?php echo $description; ?></p>
+                      <?php } ?>
+                      <?php if (($link_address != "") && ($link_text != "")) { ?>
+                        <p><a href="<?php echo $link_address; ?>"><?php echo $link_text; ?> &raquo;</a></p>
+                      <?php } ?>
+                    </div>
+
+                  <?php
+		            	}
 
 					    endwhile;
 
@@ -188,12 +248,16 @@ get_header(); ?>
 					?>
 					<?php endwhile; // end of the loop. ?>
 
-              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-					
-				
+  </div>
+
+  <div class="push"></div>
+
+</div>
+
+
 <?php get_footer(); ?>
