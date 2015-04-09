@@ -8,10 +8,12 @@
  */
 get_header(); ?>
 
+<div class="home-left-half"></div>
+
 <?php while (have_posts()) : the_post(); ?>
 <div class="container content-container">
       <div class="row">
-        <div class="col-md-6 home-left-half">
+        <div class="col-md-3">
           <div class="home-left-caption">
           <?php
 
@@ -55,10 +57,8 @@ get_header(); ?>
 
           </div>
         </div>
-        <div class="col-md-6 home-right-half">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="row">
+        <div class="col-md-3 col-md-offset-3">
+
 
                 <?php
 
@@ -150,113 +150,108 @@ get_header(); ?>
 					endif;
 
 					?>
-              </div>
+              
             </div>
-            <div class="col-md-6">
-              <div class="row">
+            <div class="col-md-3">
 
 
-					<?php
+        				<?php
 
-					// check if the repeater field has rows of data
-					if( have_rows('homepage_items_col_2') ):
+        				// check if the repeater field has rows of data
+        				if( have_rows('homepage_items_col_2') ):
 
-					 	// loop through the rows of data
-					    while ( have_rows('homepage_items_col_2') ) : the_row();
+        				 	// loop through the rows of data
+        				    while ( have_rows('homepage_items_col_2') ) : the_row();
 
-					        // display a sub field value
-			            $block_type = get_sub_field('block_type');
-					        $content_type = get_sub_field('content_type');
-					        $image = get_sub_field('image');
-					        $title = get_sub_field('title');
-					        $description = get_sub_field('description');
-					        $link_address = get_sub_field('link_address');
-					        $link_text = get_sub_field('link_text');
+        				        // display a sub field value
+        		            $block_type = get_sub_field('block_type');
+        				        $content_type = get_sub_field('content_type');
+        				        $image = get_sub_field('image');
+        				        $title = get_sub_field('title');
+        				        $description = get_sub_field('description');
+        				        $link_address = get_sub_field('link_address');
+        				        $link_text = get_sub_field('link_text');
 
-					        echo '<div class="homepage-item '.$block_type.' '. $content_type.'">';
+        				        echo '<div class="homepage-item '.$block_type.' '. $content_type.'">';
 
-                  if ($block_type == "caption"){
-                  ?>
+                        if ($block_type == "caption"){
+                        ?>
 
-                    <?php if($image != "") { ?>
-                      <div class="image">
-                          <img src="<?php echo $image; ?>" />
-                      </div>
-                    <?php } ?>
+                          <?php if($image != "") { ?>
+                            <div class="image">
+                                <img src="<?php echo $image; ?>" />
+                            </div>
+                          <?php } ?>
 
-                    <?php if($title != "") { ?>
-                      <div class="text">
-  	                    <?php echo $title; ?>
-  	                  </div>
-                    <?php } ?>
+                          <?php if($title != "") { ?>
+                            <div class="text">
+        	                    <?php echo $title; ?>
+        	                  </div>
+                          <?php } ?>
 
-                  <?php
-					        }
-					        if ($block_type == "photobox"){
-                  ?>
+                        <?php
+        				        }
+        				        if ($block_type == "photobox"){
+                        ?>
 
-                    <?php if($image != "") { ?>
-                      <div class="image">
-                          <img src="<?php echo $image; ?>" />
-                      </div>
-                    <?php } ?>
-
-
+                          <?php if($image != "") { ?>
+                            <div class="image">
+                                <img src="<?php echo $image; ?>" />
+                            </div>
+                          <?php } ?>
 
 
-                    <div class="text">
-                      <?php if($title != "") { ?>
-                        <h1><?php echo $title; ?> &raquo;</h1>
-                      <?php } ?>
-                      <?php if ($description != "") { ?>
-                        <p><?php echo $description ?></p>
-                      <?php } ?>
-                      <?php if (($link_address != "") && ($link_text != "")) { ?>
-                        <p><a href="<?php echo $link_address; ?>"><?php echo $link_text; ?> &raquo;</a></p>
-                      <?php } ?>
-                    </div>
 
-                  <?php
-		            	}
-			            if ($block_type == "color"){
-                  ?>
 
-                    <div class="text">
+                          <div class="text">
+                            <?php if($title != "") { ?>
+                              <h1><?php echo $title; ?> &raquo;</h1>
+                            <?php } ?>
+                            <?php if ($description != "") { ?>
+                              <p><?php echo $description ?></p>
+                            <?php } ?>
+                            <?php if (($link_address != "") && ($link_text != "")) { ?>
+                              <p><a href="<?php echo $link_address; ?>"><?php echo $link_text; ?> &raquo;</a></p>
+                            <?php } ?>
+                          </div>
 
-                      <?php if($title != "") { ?>
-                        <h1><?php echo $title; ?> &raquo;</h1>
-                      <?php } ?>
-                      <?php if ($description != "") { ?>
-                        <p><?php echo $description; ?></p>
-                      <?php } ?>
-                      <?php if (($link_address != "") && ($link_text != "")) { ?>
-                        <p><a href="<?php echo $link_address; ?>"><?php echo $link_text; ?> &raquo;</a></p>
-                      <?php } ?>
-                    </div>
+                        <?php
+        	            	}
+        		            if ($block_type == "color"){
+                        ?>
 
-                  <?php
-		            	}
+                          <div class="text">
 
-					    endwhile;
+                            <?php if($title != "") { ?>
+                              <h1><?php echo $title; ?> &raquo;</h1>
+                            <?php } ?>
+                            <?php if ($description != "") { ?>
+                              <p><?php echo $description; ?></p>
+                            <?php } ?>
+                            <?php if (($link_address != "") && ($link_text != "")) { ?>
+                              <p><a href="<?php echo $link_address; ?>"><?php echo $link_text; ?> &raquo;</a></p>
+                            <?php } ?>
+                          </div>
 
-					else :
+                        <?php
+        	            	}
 
-					    // no rows found
+                        echo '</div>';
 
-					endif;
+        				    endwhile;
 
-					?>
-					<?php endwhile; // end of the loop. ?>
+          				else :
 
-            </div>
+          				    // no rows found
+
+          				endif;
+
+        				?>
+        				<?php endwhile; // end of the loop. ?>
+
+
           </div>
-        </div>
-      </div>
     </div>
-  </div>
-
-  <div class="push"></div>
-
 </div>
 
 

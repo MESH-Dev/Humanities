@@ -243,12 +243,6 @@ p a:hover {
     color: #F4BF5E;
     text-decoration:none!important;
 }
-.home-right-half{
-	margin-left: 10px;
-	left: 48%;
-	margin-top: 30px;
-	margin-bottom: 200px;
-}
 
 .top-nav{
 	background:#3D4235;
@@ -289,7 +283,6 @@ p a:hover {
 	z-index: 1;
 }
 .footer-container{
-	background:url('../img/wvhc-background.png') repeat;
 	background-color: #202020;
 	opacity: 0.9;
 	filter: alpha(opacity=90);
@@ -298,32 +291,21 @@ p a:hover {
 	min-height: 100px;
 	padding-top: 10px;
 	padding-bottom: 10px;
-	height: 155px;
-}
-.push {
-	height: 155px;
+	position: relative;
+	bottom: 0;
+	width: 100%;
 }
 
-.footer-container .container{
-	width: 960px;
-}
 .navbar-bottom{
 	margin-bottom:0px!important;
 }
 .homepage-item{
 	margin-bottom:20px;
-	min-height:20px;
-	max-width: 220px;
 }
 .homepage-item.color{
-	padding-left:15px;
-	padding-right:15px;
-	padding-top: 20px;
-	padding-bottom:20px;
-	color:#ffffff;
+	padding:15px;
+	color: white;
 	font-family: "ClarendonLight", Times, Serif;
-	font-size:100%;
-
 }
 .homepage-item.color h1, .homepage-item.photobox h1{
 	color:#ffffff;
@@ -507,6 +489,12 @@ p a:hover {
 	border-right: 2px dotted #ffffff;
 }
 
+@media screen and (max-width: 991px) {
+	.footer-container .middle {
+		border: none;
+	}
+}
+
 .footer-container .middle li{
 	line-height: 13px;
 	margin-bottom: 10px;
@@ -533,6 +521,21 @@ p a:hover {
 	font-family: ClarendonLight!important;
 	line-height: 26px;
 }
+
+@media screen and (max-width: 767px) {
+	.ewv-link {
+		position: absolute;
+		top: -124px;
+		right: -25px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.ewv-link {
+		display: none;
+	}
+}
+
 
 .jumbotron.landingpage{
 	background: url('landing-background.jpg');
@@ -778,20 +781,10 @@ font-family:"NerisBlack", Arial, Sans-Serif;
 .col-md-8.main-nav.menu{
 	padding-right:0px;
 }
-.navbar-header{
-	display: block;
-	width: auto;
-	text-align: right;
-}
-.navbar-brand{
-	margin-right: auto;
-	margin-left: auto!important;
-	display: block;
-	height: 84px;
-	width: 293px;
-	float: none!important;
-	padding: 0px;
 
+.logo {
+	float: left;
+	padding: 10px 0px 3px 10px;
 }
 
 .banner-caption-top{
@@ -815,11 +808,8 @@ font-family:"NerisBlack", Arial, Sans-Serif;
 }
 .home-left-caption{
 	display: block;
-	position: absolute;
-	bottom: 115px;
-	margin-bottom: 137px;
-	margin-left: 50px;
-	max-width:212px;
+	position: relative;
+	margin-bottom: 20px;
 }
 .jumbotron-caption-container{
 	background: #FFFFFF;
@@ -1286,9 +1276,20 @@ body.events-list .contentpage.titlebar{
 	color: #847B73;
 }
 
-.wrapper {
-	min-height: 100%;
-	height: auto !important; /* This line and the next line are not necessary unless you need IE6 support */
-	height: 100%;
-	margin: 0 auto -155px; /* the bottom margin is the negative value of the footer's height */
+.push {
+	height: 500px;
+}
+
+.footer-block {
+	display: block;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	float: left;
+	width: 100%;
+}
+
+@media screen and (max-width: 991px) {
+	.footer-block {
+		border-bottom: 2px dotted white;
+	}
 }

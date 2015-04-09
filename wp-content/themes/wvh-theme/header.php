@@ -12,28 +12,30 @@
 
 <body <?php body_class(); ?>>
 
-<div class="wrapper">
-
 <?php do_action( 'before' ); ?>
 <nav class="navbar navbar-default" role="navigation">
 	<div class="container">
 	    <div class="row">
-	        <div class="col-md-12 top-nav">
-	        	<?php wp_nav_menu( array( 'theme_location' => 'topmenu' ) ); ?>
+	        <div class="col-md-12">
+						<div class="top-nav">
+							<?php wp_nav_menu( array( 'theme_location' => 'topmenu' ) ); ?>
+						</div>
 	        </div>
 	    </div>
 	    <div class="row">
-	    	<div class="col-md-12 main-nav logobox menu">
-	    	<div class="navbar-header">
-            <a class="navbar-brand" href="<?php echo home_url(); ?>"><img src="<?php bloginfo('template_directory');?>/img/wvhc-logo.png"></a>
-          </div>
-
-
-	    	<div id="navbar" class="navbar-collapse collapse">
-	    	<?php wp_nav_menu( array( 'theme_location' => 'mainmenu', 'menu_class' => 'nav navbar-nav', 'walker' => new wp_bootstrap_navwalker() ) ); ?>
-	    		<a href="#" class="ewv-link">e-WV</a>
+	    	<div class="col-md-12 logobox menu">
+					<div class="main-nav">
+						<div class="navbar-header">
+							<a href="<?php echo home_url(); ?>" class="navbar-brand">
+								<img src="<?php bloginfo('template_directory');?>/img/wvhc-logo.png">
+							</a>
+						</div>
+			    	<div id="navbar" class="navbar">
+			    		<?php wp_nav_menu( array( 'theme_location' => 'mainmenu', 'menu_class' => 'nav navbar-nav', 'walker' => new wp_bootstrap_navwalker() ) ); ?>
+			    		<a href="#" class="ewv-link">e-WV</a>
           	</div><!--/.nav-collapse -->
 
+					</div>
 	    	</div>
 	    </div>
 
