@@ -17,7 +17,7 @@
           </div>
         </div>
         <div class="col-md-6">
-          <div class="footer-block">
+          <div class="footer-block last">
             <span class="footer-address">West Virginia Humanties Council<br/>1310 Kanawah Blvd. E, Charleston, West Virgina  25301</span>
           	<span class="footer-phone">304-346-8500 (T) | 304-346-8504 (F)</span>
           </div>

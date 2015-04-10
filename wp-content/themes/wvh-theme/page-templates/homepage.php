@@ -60,7 +60,7 @@ get_header(); ?>
         <div class="col-md-3 col-md-offset-3">
 
 
-                <?php
+          <?php
 
 					// check if the repeater field has rows of data
 					if( have_rows('homepage_items_col_1') ):
@@ -108,7 +108,7 @@ get_header(); ?>
 
                     <div class="text">
                       <?php if($title != "") { ?>
-                        <h1><?php echo $title; ?> &raquo;</h1>
+                        <h1><?php echo $title; ?></h1>
                       <?php } ?>
                       <?php if ($description != "") { ?>
                         <p><?php echo $description ?></p>
@@ -126,7 +126,7 @@ get_header(); ?>
                     <div class="text">
 
                       <?php if($title != "") { ?>
-                        <h1><?php echo $title; ?> &raquo;</h1>
+                        <h1><?php echo $title; ?></h1>
                       <?php } ?>
                       <?php if ($description != "") { ?>
                         <p><?php echo $description; ?></p>
@@ -150,7 +150,7 @@ get_header(); ?>
 					endif;
 
 					?>
-              
+
             </div>
             <div class="col-md-3">
 
@@ -205,7 +205,7 @@ get_header(); ?>
 
                           <div class="text">
                             <?php if($title != "") { ?>
-                              <h1><?php echo $title; ?> &raquo;</h1>
+                              <h1><?php echo $title; ?></h1>
                             <?php } ?>
                             <?php if ($description != "") { ?>
                               <p><?php echo $description ?></p>
@@ -223,7 +223,7 @@ get_header(); ?>
                           <div class="text">
 
                             <?php if($title != "") { ?>
-                              <h1><?php echo $title; ?> &raquo;</h1>
+                              <h1><?php echo $title; ?></h1>
                             <?php } ?>
                             <?php if ($description != "") { ?>
                               <p><?php echo $description; ?></p>
