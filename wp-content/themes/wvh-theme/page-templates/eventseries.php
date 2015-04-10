@@ -8,44 +8,7 @@
  */
 get_header();?>
 
-<?php while (have_posts()) : the_post();
-
-		$page_background_url = get_field('page_background_url');
-		$page_background_quote = get_field('page_background_quote');
-		$page_heading = get_the_title();
-		$page_subheading = get_field('page_subheading');
-
-	echo "<style>
-			.jumbotron.littlelectures {
-				background: url('".$page_background_url."');
-				min-height: 400px;
-				background-position: right center;
-				background-size: cover;
-			}</style>";
-
-	echo '<div class="jumbotron littlelectures">
-	      <div class="container">
-			<div class="row">
-			        <div class="col-md-3 col-md-offset-9">
-			          <div class="jumbotron-caption-container">
-			            <div class="jumbotron-caption">'.$page_background_quote.'</div>
-			          </div>
-			          </div>
-			        </div>
-			      </div>
-			</div>
-
-			<div class="row">
-				<div class="col-md-12 littlelectures titlebar">
-					<div class="container">
-					<div class="row">
-					<h1>'.$page_heading.'</h1><h4>'.$page_subheading.'</h4>
-					</div>
-					</div>
-					
-				</div>
-			</div>';
-?>
+<?php get_template_part('partials/header', 'jumbotron'); ?>
 
 
     <div class="container content-container">
@@ -57,7 +20,7 @@ get_header();?>
         <div class="col-md-8">
           <h1 class="eventseries"><?php echo get_field('events_list_title'); ?></h1>
 
-<?php 
+<?php
 
 $events_list = get_field('events_list');
 
@@ -102,26 +65,26 @@ if( $events_list ): ?>
 			              </div>
 
 			            </div>
-			          </div> 
-			          </div>        
+			          </div>
+			          </div>
 			        </div>';
 
 
 
  endforeach;
  endif;
- endwhile;
+ 
 ?>
-					        
-
-
-        
 
 
 
 
-        
-               </div> 
+
+
+
+
+
+               </div>
         </div>
       </div>
 <?php get_footer(); ?>
