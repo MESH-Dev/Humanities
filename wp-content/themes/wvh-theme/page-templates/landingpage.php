@@ -19,6 +19,8 @@ get_header();?>
 				// check if the repeater field has rows of data
 				if( have_rows('grid_items') ):
 
+					$count = 0;
+
 				 	// loop through the rows of data
 				    while ( have_rows('grid_items') ) : the_row();
 
@@ -34,6 +36,14 @@ get_header();?>
 							?>
 
 							<?php if($grid_item_heading != "") { ?>
+
+							<?php
+
+							if($count % 3 == 0) {
+								echo "<div class='row'>";
+							}
+
+							?>
 
 					      <div class="col-md-4">
 									<div class="photobox <?php echo $grid_item_color; ?>">
@@ -68,6 +78,16 @@ get_header();?>
 										</div>
 	                </div>
 			        	</div>
+
+							<?php
+
+							if($count % 3 == 2) {
+								echo "</div>";
+							}
+
+							$count = $count + 1;
+
+							?>
 
 							<?php } ?>
 

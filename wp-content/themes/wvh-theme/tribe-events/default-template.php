@@ -53,7 +53,7 @@ while($custom_query->have_posts()) : $custom_query->the_post();
 					<h1>'.$page_heading.'</h1><h4>'.$page_subheading.'</h4>
 					</div>
 					</div>
-					
+
 				</div>
 			</div>';
 			endwhile;
@@ -70,9 +70,9 @@ while($custom_query->have_posts()) : $custom_query->the_post();
 					<?php tribe_get_view(); ?>
 					<?php tribe_events_after_html(); ?>
 				</div> <!-- #tribe-events-pg-template -->
-			</div> 
+			</div>
                <div class="col-md-4">
-               	        <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('calendar_sidebar') ) : endif; ?>    	
+               	        <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('calendar_sidebar') ) : endif; ?>
                </div>
         </div>
       </div>
