@@ -231,6 +231,8 @@ a:link, a:visited, a:active {
 
 a:hover {
     color: #F4BF5E;
+		text-decoration: none;
+		opacity: 0.7;
 }
 p a:link, p a:visited, p a:active{
 	color:#f2ae2e;
