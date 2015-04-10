@@ -4,15 +4,15 @@
         <div class="col-md-3">
           <div class="footer-block">
             <img src="<?php echo get_template_directory_uri(); ?>/img/online-catalog.png" class="alignleft">
-        		<p>Get your copy of the Encyclopedia and DVD In our <a href="#">Online Store &raquo;</a></p>
+        		<p>Get your copy of the Encyclopedia and DVD In our <a href="http://www.wvencyclopedia.org/products" target="_blank">Online Store &raquo;</a></p>
           </div>
         </div>
         <div class="col-md-3 middle">
           <div class="footer-block">
             <ul>
-  	        	<li><a href="#">e-WV: The West Virginia Encyclopedia &raquo;</a></li>
-  	        	<li><a href="#">People & Mountains &raquo;</a></li>
-  	        	<li><a href="#">Contact Us &raquo;</a></li>
+  	        	<li><a href="http://www.wvencyclopedia.org/" target="_blank">e-WV: The West Virginia Encyclopedia &raquo;</a></li>
+  	        	<li><a href="<?php echo get_permalink( get_page_by_title('People & Mountains') ); ?>">People & Mountains &raquo;</a></li>
+  	        	<li><a href="<?php echo get_permalink( get_page_by_title('Contact Us') ); ?>">Contact Us &raquo;</a></li>
   	        </ul>
           </div>
         </div>

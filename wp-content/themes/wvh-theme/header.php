@@ -32,7 +32,7 @@
 						</div>
 			    	<div id="navbar" class="navbar-collapse collapse">
 			    		<?php wp_nav_menu( array( 'theme_location' => 'mainmenu', 'menu_class' => 'nav navbar-nav', 'walker' => new wp_bootstrap_navwalker() ) ); ?>
-			    		<a href="#" class="ewv-link">e-WV</a>
+			    		<a href="http://www.wvencyclopedia.org/" target="_blank" class="ewv-link">e-WV</a>
           	</div><!--/.nav-collapse -->
 
 					</div>

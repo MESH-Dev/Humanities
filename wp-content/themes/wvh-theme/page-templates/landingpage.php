@@ -72,7 +72,7 @@ get_header();?>
 
 		                    <p><?php echo $grid_item_text; ?></p>
 		                    <p>
-		                      <a href="<?php echo $grid_item_link_url; ?>"><?php echo $grid_item_link_text; ?></a>
+		                      <a href="<?php echo $grid_item_link_url; ?>" target='_blank'><?php echo $grid_item_link_text; ?></a>
 		                    </p>
 		                  </div>
 										</div>
