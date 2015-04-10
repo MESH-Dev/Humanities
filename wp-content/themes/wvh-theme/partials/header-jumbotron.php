@@ -29,7 +29,7 @@
 	          </div>
 
 					<?php } ?>
-					
+
         </div>
       </div>
 		</div>
@@ -44,7 +44,6 @@
 				</div>
 			</div>
 		</div>
-	</div>
 
 		<?php
 		endwhile;

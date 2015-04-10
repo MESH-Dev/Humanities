@@ -23,14 +23,14 @@ $week         = 0;
 		<thead class="tribe-mini-calendar-nav">
 		<tr>
 			<td colspan="4" class="text-left">
-				<div>
+				<div style="text-align:left">
 					<h3 class="calendar-title">Calendar</h3>
 					<span id="tribe-mini-calendar-month"><?php tribe_events_the_mini_calendar_title() ?></span>
 					<img id="ajax-loading-mini" src="<?php echo tribe_events_resource_url( 'images/tribe-loading.gif' ) ?>" alt="loading..." />
 				</div>
 			</td>
 			<td colspan="3">
-				<div>
+				<div style="text-align:right">
 					<?php tribe_events_the_mini_calendar_prev_link() ?>
 					<?php tribe_events_the_mini_calendar_next_link() ?>
 				</div>

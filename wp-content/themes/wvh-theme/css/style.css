@@ -1049,7 +1049,7 @@ padding: 5px 15px 6px 15px;
 
 .tribe-events-list-event-container .tribe-events-list-event-title a.url {
 	font-size: 25px;
-	color: #000000;
+	color: #363636;
 }
 
 .tribe-events-list-event-container .tribe-events-list-event-type {
@@ -1072,16 +1072,21 @@ padding: 5px 15px 6px 15px;
 .tribe-mini-calendar-grid-wrapper table.tribe-mini-calendar td.tribe-events-thismonth {
 	border: none !important;
 	border-radius: 100%;
+	background: transparent;
+}
+
+.tribe-mini-calendar-grid-wrapper table.tribe-mini-calendar td.tribe-events-present {
+	background-color: #ae6c15;
 }
 
 .tribe-mini-calendar-grid-wrapper table.tribe-mini-calendar td.tribe-events-future a, .tribe-mini-calendar-grid-wrapper table.tribe-mini-calendar td.tribe-events-past a, .tribe-mini-calendar-grid-wrapper table.tribe-mini-calendar td.tribe-events-past span, .tribe-mini-calendar-grid-wrapper table.tribe-mini-calendar td.tribe-events-thismonth a, .tribe-mini-calendar-grid-wrapper table.tribe-mini-calendar td.tribe-events-thismonth span, .tribe-events-past span {
-  color: #4f4e4d!important;
+  color: #4f4e4d;
   font-family: 'ClarendonLight';
   font-size: 16px;
   height: 35px;
   margin-top: auto;
   margin-bottom: auto;
-  line-height: 23px;
+  line-height: 28px;
 }
 .tribe-mini-calendar .tribe-events-past {
   opacity: 1.0!important;
@@ -1151,12 +1156,13 @@ padding: 5px 15px 6px 15px;
 .tribe-mini-calendar-nav-link.next-month span {
  font-family: "NerisBlack", Arial, Sans-Serif;
 
-  margin-left: 3px;
+  left: -2px;
+	position: relative;
 }
 .tribe-mini-calendar-nav-link.prev-month span {
 font-family: "NerisBlack", Arial, Sans-Serif;
 
-  margin-right: 3px;
+  margin-right: 5px;
 }
 .tribe-mini-calendar-list-wrapper {
 	display: none;
@@ -1199,13 +1205,13 @@ body.events-list .contentpage.titlebar{
   text-transform: none;
   color: #AE6C15;
   font-family: "NerisBlack", Arial, Sans-Serif;
-  margin-left: -40px;
 }
 .tribe-mini-calendar-grid-wrapper table.tribe-mini-calendar .tribe-mini-calendar-nav #tribe-mini-calendar-month {
   font-size: 16px;
   text-transform: none;
   color: #4f4e4d;
-  margin-left: -40px;
+	margin-top: 10px;
+	margin-bottom: 15px;
 }
 .tribe-mini-calendar-wrapper {
   width: 100%;
@@ -1239,11 +1245,11 @@ body.events-list .contentpage.titlebar{
 	  color: #847b73;
 	  text-align: center;
 	  border: 2px solid #847b73;
-	  border-radius: 3px;
 	  font-size: 24px;
 	  line-height: 9px;
 	  margin-top: 6px;
 	  margin-left: 6px;
+		margin-right: 5px;
 	}
 	.tribe-events-content-filterbar input[type=checkbox]:checked + .tribe-events-content-filterbar label span.checkbox {
 		content: "\2713";
@@ -1293,3 +1299,5 @@ body.events-list .contentpage.titlebar{
 .navbar {
 	margin-bottom: 10px !important;
 }
+
+#tribe-events-bar { display: none; }
