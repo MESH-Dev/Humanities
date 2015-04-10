@@ -14,3 +14,6 @@ wp-config.php
 node_modules/
 .sass-cache/
 .DS_Store
+wp-content/themes/twentyfourteen
+wp-content/themes/twentythirteen
+wp-content/themes/twentytwelve

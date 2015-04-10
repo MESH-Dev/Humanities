@@ -16,6 +16,9 @@ get_header();?>
 
 			<?php
 
+				$rows = get_field('grid_items');
+				$row_count = count($rows);
+
 				// check if the repeater field has rows of data
 				if( have_rows('grid_items') ):
 
@@ -81,7 +84,7 @@ get_header();?>
 
 							<?php
 
-							if($count % 3 == 2) {
+							if(($count % 3 == 2) || ($count == ($row_count - 1))) {
 								echo "</div>";
 							}
 

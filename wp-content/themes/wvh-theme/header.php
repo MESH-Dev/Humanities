@@ -30,7 +30,7 @@
 								<img src="<?php bloginfo('template_directory');?>/img/wvhc-logo.png">
 							</a>
 						</div>
-			    	<div id="navbar" class="navbar-collapse collapse">
+			    	<div id="navbar" class="navbar">
 			    		<?php wp_nav_menu( array( 'theme_location' => 'mainmenu', 'menu_class' => 'nav navbar-nav', 'walker' => new wp_bootstrap_navwalker() ) ); ?>
 			    		<a href="http://www.wvencyclopedia.org/" target="_blank" class="ewv-link">e-WV</a>
           	</div><!--/.nav-collapse -->
