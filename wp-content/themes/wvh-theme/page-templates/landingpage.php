@@ -85,7 +85,7 @@ get_header();?>
 							<?php
 
 							if(($count % 3 == 2) || ($count == ($row_count - 1))) {
-								echo "</div>";
+								echo "</div><span>".$row_count."</span>";
 							}
 
 							$count = $count + 1;

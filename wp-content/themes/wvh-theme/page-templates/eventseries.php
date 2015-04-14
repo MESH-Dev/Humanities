@@ -20,6 +20,8 @@ get_header();?>
         <div class="col-md-8">
           <h1 class="eventseries"><?php echo get_field('events_list_title'); ?></h1>
 
+
+
 <?php
 
 $events_list = get_field('events_list');
@@ -73,7 +75,7 @@ if( $events_list ): ?>
 
  endforeach;
  endif;
- 
+
 ?>
 
 

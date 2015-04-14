@@ -180,7 +180,7 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 			// If item has_children add atts to a.
 			if ( $args->has_children && $depth === 0 ) {
 				$atts['href']   		= $item->url;
-				
+
 				$atts['class']			= 'dropdown-toggle';
 				$atts['aria-haspopup']	= 'true';
 			} else {
@@ -290,3 +290,99 @@ function calendar_widgets_init() {
 	) );
 }
 add_action( 'widgets_init', 'calendar_widgets_init' );
+
+function add_external_calendar_events() {
+
+		$servername = "localhost";
+		$username = "mesh";
+		$password = "Wasd1234!";
+		$dbname = "wvhc_filemaker";
+
+		// Create connection
+		$conn = new mysqli($servername, $username, $password, $dbname);
+		// Check connection
+
+		if ($conn->connect_error) {
+		    die("Connection failed: " . $conn->connect_error);
+		}
+
+		$sql = "SELECT * FROM events where wp_id is null";
+		$result = $conn->query($sql);
+
+		if ($result->num_rows > 0) {
+		    // output data of each row
+		    while($row = $result->fetch_assoc()) {
+
+					$id = $row["ID"];
+					$eventID = $row["EventID"];
+					$title = $row["Title"];
+					$dateStart = $row["DateStart"];
+					$dateEnd = $row["DateEnd"];
+					$time = $row["Time"];
+					$description = $row["Description"];
+					$venue = $row["Venue"];
+					$venueStreet1 = $row["VenueStreet1"];
+					$venueStreet2 = $row["VenueStreet2"];
+					$venueCity = $row["VenueCity"];
+					$venueState = $row["VenueState"];
+					$venueZip = $row["VenueZip"];
+					$venueContact = $row["VenueContact"];
+					$venuePhone = $row["VenuePhone"];
+					$venueURL = $row["VenueURL"];
+					$programType = $row["ProgramType"];
+					$filename = $row["Filename"];
+
+					// Create post object
+					$my_post = array(
+					'post_title'    => $title,
+					'post_content'  => $description,
+					'post_status'   => 'publish',
+					'post_type' => 'tribe_events'
+					);
+
+					// Insert the post into the database
+					$post_id = wp_insert_post( $my_post );
+
+					// Update the external database with the new post ID
+					$conn->query("UPDATE events set wp_id = $post_id where ID = $id");
+
+					// UPDATE THE POST META
+
+					// Check if event location exists
+
+					if (strlen($venue) > 0) {
+						global $wpdb;
+						$r = $wpdb->get_results ( "SELECT * FROM  $wpdb->posts WHERE post_title = '".$venue."'" );
+
+						if(count($r) <= 0) {
+
+								$new_venue = array(
+									'post_title' => $venue,
+									'post_status' => 'publish',
+									'post_type' => 'tribe_venue',
+									''
+								);
+
+								$venue_id = wp_insert_post($new_venue);
+
+								update_post_meta($venue_id, "_VenueVenue", $title);
+								update_post_meta($venue_id, "_VenueAddress", $venueStreet1);
+								update_post_meta($venue_id, "_VenueCity", $venueCity);
+								update_post_meta($venue_id, "_VenueStateProvince", $venueState);
+								update_post_meta($venue_id, "_VenueZip", $venueZip);
+								update_post_meta($venue_id, "_VenueCountry", "United States");
+
+								update_post_meta($venue_id, "_VenueURL", $venueURL);
+								update_post_meta($venue_id, "_VenuePhone", $venuePhone);
+
+						}
+					}
+
+
+		    }
+		} else {
+		    echo "0 results";
+		}
+		$conn->close();
+
+}
