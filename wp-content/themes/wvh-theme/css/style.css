@@ -430,17 +430,17 @@ p a:hover {
 }
 
 .main-nav li > ul > li:first-child {
-	padding-top: 15px;
+	padding-top: 10px;
 }
 
 .main-nav li > ul > li:last-child {
-	padding-bottom: 25px;
+	padding-bottom: 15px;
 }
 
 
 .main-nav li > ul > li > a {
-	font-size: 20px;
-	line-height: 30px;
+	font-size: 14px;
+	line-height: 20px;
 	padding-top: 5px;
 	padding-bottom: 5px;
 }
