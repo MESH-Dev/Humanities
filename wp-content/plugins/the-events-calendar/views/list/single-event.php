@@ -59,12 +59,7 @@ $organizer = tribe_get_organizer();
 			<?php echo tribe_events_event_schedule_details() ?>
 		</div>
 
-		<?php if ( $venue_details ) : ?>
-			<!-- Venue Display Info -->
-			<div class="tribe-events-venue-details">
-				<?php echo implode( ', ', $venue_details ); ?>
-			</div> <!-- .tribe-events-venue-details -->
-		<?php endif; ?>
+		
 
 	</div>
 </div><!-- .tribe-events-event-meta -->

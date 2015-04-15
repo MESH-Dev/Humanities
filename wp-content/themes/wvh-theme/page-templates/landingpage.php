@@ -12,7 +12,7 @@ get_header();?>
 
 	<div class="container content-container">
 	  <!-- Example row of columns -->
-	  <div class="row">
+	  
 
 			<?php
 
@@ -71,11 +71,11 @@ get_header();?>
 
 											<div class="text">
 
-												<h1><?php echo $grid_item_heading; ?></h1>
+												<a href="<?php echo $grid_item_link_url; ?>"><h1><?php echo $grid_item_heading; ?></h1></a>
 
 		                    <p><?php echo $grid_item_text; ?></p>
 		                    <p>
-		                      <a href="<?php echo $grid_item_link_url; ?>" target='_blank'><?php echo $grid_item_link_text; ?></a>
+		                      <a href="<?php echo $grid_item_link_url; ?>"><?php echo $grid_item_link_text; ?> &raquo;</a>
 		                    </p>
 		                  </div>
 										</div>
@@ -85,7 +85,7 @@ get_header();?>
 							<?php
 
 							if(($count % 3 == 2) || ($count == ($row_count - 1))) {
-								echo "</div><span>".$row_count."</span>";
+								echo "</div>";
 							}
 
 							$count = $count + 1;
@@ -106,6 +106,6 @@ get_header();?>
 
 			?>
 
-    </div>
+
   </div>
 <?php get_footer(); ?>

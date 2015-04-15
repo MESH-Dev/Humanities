@@ -8,6 +8,14 @@ get_header();?>
 <?php get_template_part('partials/header', 'jumbotron'); ?>
 
 <div class="container content-container">
+
+  <div class="row">
+    <div class="col-md-12">
+      <?php if(function_exists(simple_breadcrumb)) {simple_breadcrumb();} ?>
+      <hr>
+    </div>
+  </div>
+
   <!-- Example row of columns -->
   <div class="row">
 

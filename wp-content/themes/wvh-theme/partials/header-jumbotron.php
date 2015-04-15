@@ -34,7 +34,19 @@
       </div>
 		</div>
 
-		<div class="titlebar">
+		<?php
+
+		if (wp_get_post_parent_id(get_the_ID()) == get_page_by_title('Grants')->ID || get_page_by_title('Grants')->ID == get_the_ID()) {
+			$color = 'forest';
+		} elseif (wp_get_post_parent_id(get_the_ID()) == get_page_by_title('Programs')->ID || get_page_by_title('Programs')->ID == get_the_ID()) {
+			$color = 'sand';
+		} else {
+			$color = 'kokoda';
+		}
+
+		?>
+
+		<div class="titlebar <?php echo $color; ?>">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">

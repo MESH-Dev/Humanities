@@ -13,6 +13,7 @@
 <body <?php body_class(); ?>>
 
 <?php do_action( 'before' ); ?>
+
 <nav class="navbar navbar-default" role="navigation">
 	<div class="container">
 	    <div class="row">
@@ -38,10 +39,5 @@
 					</div>
 	    	</div>
 	    </div>
-
-
-
-
-
 	</div>
 </nav>

@@ -37,7 +37,7 @@ $page_subheading = get_field('page_subheading');
 		}
 </style>
 
-<?php add_external_calendar_events(); ?>
+
 
 <div class="jumbotron">
 	<div class="container">
@@ -79,9 +79,7 @@ $page_subheading = get_field('page_subheading');
       <div class="row">
         <div class="col-md-8">
 				<div id="tribe-events-pg-template">
-					<?php tribe_events_before_html(); ?>
 					<?php tribe_get_view(); ?>
-					<?php tribe_events_after_html(); ?>
 				</div> <!-- #tribe-events-pg-template -->
 			</div>
        <div class="col-md-4">

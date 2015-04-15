@@ -95,6 +95,7 @@ function upbootwp_scripts() {
 	wp_enqueue_style( 'bootstrap-css', get_template_directory_uri().'/css/bootstrap.css', array(), '1.1');
 	wp_enqueue_style( 'wvh-css', get_template_directory_uri().'/css/style.css', array(), '1.1');
 	wp_enqueue_script( 'upbootwp-basefile', get_template_directory_uri().'/js/bootstrap.min.js',array( 'jquery' ));
+	wp_enqueue_script( 'wvh-js', get_template_directory_uri().'/js/humanities.js', array('jquery'));
 }
 add_action( 'wp_enqueue_scripts', 'upbootwp_scripts' );
 
@@ -327,6 +328,7 @@ function add_external_calendar_events() {
 					$venueState = $row["VenueState"];
 					$venueZip = $row["VenueZip"];
 					$venueContact = $row["VenueContact"];
+					$venueEmail = $row["VenueEmail"];
 					$venuePhone = $row["VenuePhone"];
 					$venueURL = $row["VenueURL"];
 					$programType = $row["ProgramType"];
@@ -343,16 +345,22 @@ function add_external_calendar_events() {
 					// Insert the post into the database
 					$post_id = wp_insert_post( $my_post );
 
+					// VENUE
+
+					$dateStart = $dateStart . " " . $time;
+
+					update_post_meta($post_id, "_EventStartDate", $dateStart);
+					update_post_meta($post_id, "_EventEndDate", $dateEnd);
+
 					// Update the external database with the new post ID
 					$conn->query("UPDATE events set wp_id = $post_id where ID = $id");
-
-					// UPDATE THE POST META
 
 					// Check if event location exists
 
 					if (strlen($venue) > 0) {
+
 						global $wpdb;
-						$r = $wpdb->get_results ( "SELECT * FROM  $wpdb->posts WHERE post_title = '".$venue."'" );
+						$r = $wpdb->get_results ( "SELECT ID FROM  $wpdb->posts WHERE post_title = '".$venue."'" );
 
 						if(count($r) <= 0) {
 
@@ -375,13 +383,54 @@ function add_external_calendar_events() {
 								update_post_meta($venue_id, "_VenueURL", $venueURL);
 								update_post_meta($venue_id, "_VenuePhone", $venuePhone);
 
+								update_post_meta($post_id, "_EventVenueID", $venue_id);
+
+						} else {
+
+							  foreach($r as $row1) {
+									update_post_meta($post_id, "_EventVenueID", $row1->ID);
+								}
+
+
 						}
+					}
+
+					if (strlen($venueContact) > 0) {
+
+						global $wpdb;
+						$r = $wpdb->get_results ( "SELECT ID FROM  $wpdb->posts WHERE post_title = '".$venueContact."'" );
+
+						if(count($r) <= 0) {
+
+								$new_contact = array(
+									'post_title' => $venueContact,
+									'post_status' => 'publish',
+									'post_type' => 'tribe_organizer'
+								);
+
+								$contact_id = wp_insert_post($new_contact);
+
+								update_post_meta($contact_id, "_OrganizerWebsite", $venueURL);
+								update_post_meta($contact_id, "_OrganizerEmail", $venueEmail);
+								update_post_meta($contact_id, "_OrganizerPhone", $venuePhone);
+
+								update_post_meta($post_id, "_EventOrganizerID", $contact_id);
+
+						} else {
+
+							  foreach($r as $row1) {
+									update_post_meta($post_id, "_EventOrganizerID", $row1->ID);
+								}
+
+
+						}
+
 					}
 
 
 		    }
 		} else {
-		    echo "0 results";
+
 		}
 		$conn->close();
 

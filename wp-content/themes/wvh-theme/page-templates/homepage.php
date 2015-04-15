@@ -108,7 +108,7 @@ get_header(); ?>
 
                     <div class="text">
                       <?php if($title != "") { ?>
-                        <h1><?php echo $title; ?></h1>
+                        <a href="<?php echo $link_address; ?>"><h1><?php echo $title; ?></h1></a>
                       <?php } ?>
                       <?php if ($description != "") { ?>
                         <p><?php echo $description ?></p>
@@ -126,7 +126,7 @@ get_header(); ?>
                     <div class="text">
 
                       <?php if($title != "") { ?>
-                        <h1><?php echo $title; ?></h1>
+                        <a href="<?php echo $link_address; ?>"><h1><?php echo $title; ?></h1></a>
                       <?php } ?>
                       <?php if ($description != "") { ?>
                         <p><?php echo $description; ?></p>
