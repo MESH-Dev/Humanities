@@ -29,7 +29,7 @@
               <?php if($sidebar_heading != "") { ?>
 
                 <div class="text">
-                  <h1><a href="<?php echo $sidebar_link_url; ?>"><?php echo $sidebar_heading; ?></a></h1>
+                  <a href="<?php echo $sidebar_link_url; ?>"><h1><?php echo $sidebar_heading; ?></h1></a>
                   <p><?php echo $sidebar_text; ?></p>
                   <p><a href="<?php echo $sidebar_link_url; ?>"><?php echo $sidebar_link_text; ?> &raquo;</a></p>
                 </div>

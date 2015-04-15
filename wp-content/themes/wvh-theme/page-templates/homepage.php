@@ -82,9 +82,23 @@ get_header(); ?>
                   if ($block_type == "caption"){
                   ?>
 
-                    <?php if($image != "") { ?>
+                    <?php if($image != "") {
+
+                      // vars
+                    	$url = $image['url'];
+                    	$title = $image['title'];
+                    	$alt = $image['alt'];
+                    	$caption = $image['caption'];
+
+                    	// thumbnail
+                    	$size = 'thumbnail';
+                    	$thumb = $image['sizes'][ $size ];
+                    	$width = $image['sizes'][ $size . '-width' ];
+                    	$height = $image['sizes'][ $size . '-height' ];
+
+                    ?>
                       <div class="image">
-                          <img src="<?php echo $image; ?>" />
+                          <img src="<?php echo $thumb; ?>" />
                       </div>
                     <?php } ?>
 

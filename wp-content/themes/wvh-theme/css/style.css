@@ -234,7 +234,7 @@ a:hover {
 		text-decoration: none !important;
 		opacity: 0.7;
 }
-p a:link, p a:visited, p a:active{
+h4 a:link, h4 a:visited, h4 a:active, p a:link, p a:visited, p a:active{
 	color:#f2ae2e;
 	font-family: "ClarendonLight", Times, Serif;
 	font-size:14px;
@@ -1358,12 +1358,16 @@ body.events-list .contentpage.titlebar{
 
 .breadcrumb, .breadcrumb a {
 	font-family: ClarendonLight;
-	font-size: 18px;
-	line-height: 22px;
+	font-size: 14.5px;
+	line-height: 23px;
 	color: #a3a286;
 	font-weight: bold;
 }
 
-.text a {
+.text p a {
 	text-decoration: none;
+	font-family:"NerisBlack", Arial, Sans-Serif !important;
+	font-size: 14px;
+	line-height: 22px;
+
 }
