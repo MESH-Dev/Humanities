@@ -38,6 +38,8 @@ function upbootwp_setup() {
 
 add_action( 'after_setup_theme', 'upbootwp_setup' );
 
+add_image_size('large', 720, '', true);
+
 /**
  * Register widgetized area and update sidebar with default widgets
  */

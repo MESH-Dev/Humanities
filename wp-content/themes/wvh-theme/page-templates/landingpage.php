@@ -12,7 +12,7 @@ get_header();?>
 
 	<div class="container content-container">
 	  <!-- Example row of columns -->
-	  
+
 
 			<?php
 
@@ -74,9 +74,12 @@ get_header();?>
 												<a href="<?php echo $grid_item_link_url; ?>"><h1><?php echo $grid_item_heading; ?></h1></a>
 
 		                    <p><?php echo $grid_item_text; ?></p>
-		                    <p>
-		                      <a href="<?php echo $grid_item_link_url; ?>"><?php echo $grid_item_link_text; ?> &raquo;</a>
-		                    </p>
+
+												<?php if ($grid_item_link_text != "") { ?>
+													<p>
+			                      <a href="<?php echo $grid_item_link_url; ?>"><?php echo $grid_item_link_text; ?> &raquo;</a>
+			                    </p>
+												<?php } ?>
 		                  </div>
 										</div>
 	                </div>

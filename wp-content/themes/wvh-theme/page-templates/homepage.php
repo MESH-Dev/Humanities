@@ -77,24 +77,21 @@ get_header(); ?>
 					        $link_address = get_sub_field('link_address');
 					        $link_text = get_sub_field('link_text');
 
+                  // vars
+                  $url = $image['url'];
+
+                  $alt = $image['alt'];
+                  $caption = $image['caption'];
+
+                  // thumbnail
+                  $thumb = $image['sizes']['large'];
+
 					        echo '<div class="homepage-item '.$block_type.' '. $content_type.'">';
 
                   if ($block_type == "caption"){
                   ?>
 
                     <?php if($image != "") {
-
-                      // vars
-                    	$url = $image['url'];
-                    	$title = $image['title'];
-                    	$alt = $image['alt'];
-                    	$caption = $image['caption'];
-
-                    	// thumbnail
-                    	$size = 'thumbnail';
-                    	$thumb = $image['sizes'][ $size ];
-                    	$width = $image['sizes'][ $size . '-width' ];
-                    	$height = $image['sizes'][ $size . '-height' ];
 
                     ?>
                       <div class="image">
@@ -115,7 +112,7 @@ get_header(); ?>
 
                     <?php if($image != "") { ?>
                       <div class="image">
-                          <img src="<?php echo $image; ?>" />
+                          <img src="<?php echo $thumb; ?>" />
                       </div>
                     <?php } ?>
 
@@ -186,6 +183,15 @@ get_header(); ?>
         				        $link_address = get_sub_field('link_address');
         				        $link_text = get_sub_field('link_text');
 
+                        // vars
+                      	$url = $image['url'];
+                      	
+                      	$alt = $image['alt'];
+                      	$caption = $image['caption'];
+
+                      	// thumbnail
+                      	$thumb = $image['sizes']['large'];
+
         				        echo '<div class="homepage-item '.$block_type.' '. $content_type.'">';
 
                         if ($block_type == "caption"){
@@ -193,7 +199,7 @@ get_header(); ?>
 
                           <?php if($image != "") { ?>
                             <div class="image">
-                                <img src="<?php echo $image; ?>" />
+                                <img src="<?php echo $thumb; ?>" />
                             </div>
                           <?php } ?>
 
@@ -210,7 +216,7 @@ get_header(); ?>
 
                           <?php if($image != "") { ?>
                             <div class="image">
-                                <img src="<?php echo $image; ?>" />
+                                <img src="<?php echo $thumb; ?>" />
                             </div>
                           <?php } ?>
 
