@@ -6,19 +6,19 @@ Description: This is a really simple WP Plugin which lets you use Breadcrumbs fo
 Version: 1.0.2
 Author: Christoph Weil
 Author URI: http://www.christophweil.de
-Update Server: 
+Update Server:
 Min WP Version: 3.2.1
-Max WP Version: 
+Max WP Version:
 */
 
 
 function simple_breadcrumb() {
     global $post;
 	$separator = " » "; // Simply change the separator to what ever you need e.g. / or >
-	
+
     echo '<div class="breadcrumb">';
 	if (!is_front_page()) {
-		echo '<a href="';
+		echo '<a style="margin-right:5px; margin-left:5px;" href="';
 		echo get_option('home');
 		echo '">';
 		bloginfo('name');
@@ -27,20 +27,20 @@ function simple_breadcrumb() {
 			the_category(', ');
 			if ( is_single() ) {
 				echo $separator;
-				the_title();
+        echo '<span style="margin-right:5px; margin-left:5px;">'.get_the_title().'</span>';
 			}
 		} elseif ( is_page() && $post->post_parent ) {
 			$home = get_page(get_option('page_on_front'));
 			for ($i = count($post->ancestors)-1; $i >= 0; $i--) {
 				if (($home->ID) != ($post->ancestors[$i])) {
-					echo '<a href="';
-					echo get_permalink($post->ancestors[$i]); 
+					echo '<a style="margin-right:5px; margin-left:5px;" href="';
+					echo get_permalink($post->ancestors[$i]);
 					echo '">';
 					echo get_the_title($post->ancestors[$i]);
 					echo "</a>".$separator;
 				}
 			}
-			echo the_title();
+      echo '<span style="margin-right:5px; margin-left:5px;">'.get_the_title().'</span>';
 		} elseif (is_page()) {
 			echo the_title();
 		} elseif (is_404()) {

@@ -1357,8 +1357,8 @@ body.events-list .contentpage.titlebar{
 }
 
 .breadcrumb, .breadcrumb a {
-	font-family: ClarendonLight;
-	font-size: 14.5px;
+	font-family:"Neris", Arial, Sans-Serif;
+	font-size: 12.5px;
 	line-height: 23px;
 	color: #a3a286;
 	font-weight: bold;
@@ -1369,5 +1369,4 @@ body.events-list .contentpage.titlebar{
 	font-family:"NerisBlack", Arial, Sans-Serif !important;
 	font-size: 14px;
 	line-height: 22px;
-
 }
