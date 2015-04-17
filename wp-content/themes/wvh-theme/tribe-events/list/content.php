@@ -19,7 +19,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<?php $terms = get_terms('tribe_events_cat'); ?>
 
 	<div class="tribe-events-content-filterbar">
-		<span class="tribe-events-content-filterbar-text">Filters: </span>
 		<?php foreach ($terms as $term) : ?>
 			<?php
 				if(checked(true, in_array($term->term_id, $_REQUEST['tribe_eventcategory']), FALSE)){

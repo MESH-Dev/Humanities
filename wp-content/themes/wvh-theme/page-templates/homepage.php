@@ -185,7 +185,7 @@ get_header(); ?>
 
                         // vars
                       	$url = $image['url'];
-                      	
+
                       	$alt = $image['alt'];
                       	$caption = $image['caption'];
 

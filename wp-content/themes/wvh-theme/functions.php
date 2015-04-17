@@ -309,6 +309,7 @@ function add_external_calendar_events() {
 		    die("Connection failed: " . $conn->connect_error);
 		}
 
+		// $sql = "SELECT * FROM events where wp_id is null";
 		$sql = "SELECT * FROM events where wp_id is null";
 		$result = $conn->query($sql);
 
@@ -429,6 +430,19 @@ function add_external_calendar_events() {
 
 					}
 
+					if (strlen($programType) > 0) {
+
+
+				  	if (term_exists($programType, 'tribe_events_cat')) {
+							wp_set_object_terms($post_id, $programType, 'tribe_events_cat');
+						}
+						else {
+							wp_insert_term($programType, 'tribe_events_cat');
+							wp_set_object_terms($post_id, $programType, 'tribe_events_cat');
+						}
+
+
+					}
 
 		    }
 		} else {
