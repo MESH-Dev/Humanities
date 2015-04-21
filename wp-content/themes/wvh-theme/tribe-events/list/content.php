@@ -48,23 +48,30 @@ if ( ! defined( 'ABSPATH' ) ) {
 		tribe_ev.fn.set_form(params);
 
 		$('#tribe-events-content-wrapper').on('change', '.tribe-event-list-custom-filter', function(e) {
+
 			$this = $(this);
 			if ($this.attr('data-slug') == 'all') {
 				if ($this.get(0).checked) {
+
 					$('.tribe-events-filter-checkboxes input[type="checkbox"]').each(function() {
 						$(this).attr('checked', 'checked').trigger('change');
+						$('.tribe-events-content-filterbar span.checkbox#' + $(this).attr('data-slug') + '').trigger('change').html('&#8226;');
 					});
 				} else {
 					$('.tribe-events-filter-checkboxes input[type="checkbox"]').each(function() {
 						$(this).removeAttr('checked').trigger('change');
+						$('.tribe-events-content-filterbar span.checkbox#' + $(this).attr('data-slug') + '').trigger('change').html('');
 					});
 				}
 			} else {
+
 				if ($(this).get(0).checked){
 					$('.tribe-events-filter-checkboxes input[type="checkbox"][data-slug="' + $(this).attr('data-slug') + '"]').trigger('change').attr('checked', 'checked');
 					$('.tribe-events-content-filterbar span.checkbox#' + $(this).attr('data-slug') + '').trigger('change').html('&#8226;');
 				}else{
+
 					$('.tribe-events-filter-checkboxes input[type="checkbox"][data-slug="' + $(this).attr('data-slug') + '"]').trigger('change').removeAttr('checked');
+					$('.tribe-events-content-filterbar span.checkbox#' + $(this).attr('data-slug') + '').trigger('change').html('');
 				}
 			}
 		});
