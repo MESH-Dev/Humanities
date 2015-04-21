@@ -78,9 +78,13 @@ $page_subheading = get_field('page_subheading');
       <!-- Example row of columns -->
       <div class="row">
         <div class="col-md-8">
-				<div id="tribe-events-pg-template">
-					<?php tribe_get_view(); ?>
-				</div> <!-- #tribe-events-pg-template -->
+
+					<div id="tribe-events-pg-template">
+						<?php tribe_events_before_html(); ?>
+						<?php tribe_get_view(); ?>
+						<?php tribe_events_after_html(); ?>
+					</div> <!-- #tribe-events-pg-template -->
+
 			</div>
        <div class="col-md-4">
         <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('calendar_sidebar') ) : endif; ?>
