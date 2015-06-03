@@ -84,7 +84,7 @@ get_header(); ?>
                   $caption = $image['caption'];
 
                   // thumbnail
-                  $thumb = $image['sizes']['large'];
+                  $thumb = $image['sizes']['col-3'];
 
 					        echo '<div class="homepage-item '.$block_type.' '. $content_type.'">';
 
@@ -190,7 +190,7 @@ get_header(); ?>
                       	$caption = $image['caption'];
 
                       	// thumbnail
-                      	$thumb = $image['sizes']['large'];
+                      	$thumb = $image['sizes']['col-3'];
 
         				        echo '<div class="homepage-item '.$block_type.' '. $content_type.'">';
 

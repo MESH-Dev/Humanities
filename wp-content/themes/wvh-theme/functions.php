@@ -39,6 +39,8 @@ function upbootwp_setup() {
 add_action( 'after_setup_theme', 'upbootwp_setup' );
 
 add_image_size('large', 720, '', true);
+add_image_size('col-3', 200, '', true);
+add_image_size('col-4', 277, '', true);
 
 /**
  * Register widgetized area and update sidebar with default widgets
