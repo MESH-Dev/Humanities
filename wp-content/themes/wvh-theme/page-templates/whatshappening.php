@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Page - Whats Happening
+ *  
  * The template used for displaying page content in page.php
  *
  * @author Matthias Thom | http://upplex.de

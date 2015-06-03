@@ -29,15 +29,16 @@ $events_list = get_field('events_list');
 if( $events_list ): ?>
 
 	<?php foreach( $events_list as $e ):
+		 
 
-		$title = get_field('title', $e->ID);
+		$title = $e->post_title;
 		$event_type = get_field('event_type', $e->ID);
-		$datestart = get_field('datestart', $e->ID);
-		$dateend = get_field('dateend', $e->ID);
-		$time = get_field('time', $e->ID);
-		$description = get_field('description', $e->ID);
-		$venue = get_field('venue', $e->ID);
-		$filename = get_field('filename', $e->ID);
+		$datestart = get_post_meta($e->ID,'_EventStartDate',true);
+		$dateend = get_post_meta($e->ID,'_EventEndDate',true);
+		//$time = get_field('time', $e->ID);
+		$description = $e->post_excerpt;
+		//$venue = get_field('venue', $e->ID);
+		//$filename = get_field('filename', $e->ID);
 
 		$date_display  = strtotime($datestart);
 		$date_display_day   = date('d',$date_display);
@@ -54,16 +55,14 @@ if( $events_list ): ?>
 			                <span class="day">'.$date_display_day.'</span>
 			              </div>
 			            </div>
-			            <div class="col-md-3">
-			                <div class="littlelectures-thumbnail">
-			                  <img src="'.$filename.'">
-			                </div>
+			            <div class="col-md-1">
 			            </div>
 			            <div class="col-md-8">
 			              <div class="description">
 			                <h2>'.$title.'</h2>
 			                <h3 class="h3bold">'.$event_type.'</h3>
 			                <p>'.$description.'</p>
+			                <a href='.$e->guid.'>View Details &raquo;</a>
 			              </div>
 
 			            </div>

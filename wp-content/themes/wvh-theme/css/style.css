@@ -1301,6 +1301,14 @@ body.events-list .contentpage.titlebar{
 	color: #847B73;
 }
 
+.single-tribe_events .tribe-events-event-meta {
+  background: none;
+  border: none;
+  margin: 30px 0;
+}
+
+
+
 .push {
 	height: 500px;
 }

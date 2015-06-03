@@ -42,6 +42,23 @@ add_image_size('large', 720, '', true);
 add_image_size('col-3', 200, '', true);
 add_image_size('col-4', 277, '', true);
 
+
+
+ 
+function remove_menus(){
+  
+ 
+  remove_menu_page( 'edit.php' );                   //Posts
+  remove_menu_page( 'edit-comments.php' );          //Comments
+
+  
+}
+add_action( 'admin_menu', 'remove_menus' );
+ 
+
+
+
+
 /**
  * Register widgetized area and update sidebar with default widgets
  */
