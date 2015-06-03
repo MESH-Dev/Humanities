@@ -11,7 +11,7 @@
           <div class="footer-block">
             <ul>
   	        	<li><a href="http://www.wvencyclopedia.org/" target="_blank">e-WV: The West Virginia Encyclopedia &raquo;</a></li>
-  	        	<li><a href="<?php echo get_permalink( get_page_by_title('People & Mountains') ); ?>">People & Mountains &raquo;</a></li>
+  	        	<li><a href="<?php echo get_permalink( get_page_by_title('Our Historic House') ); ?>">Our Historic House &raquo;</a></li>
   	        	<li><a href="<?php echo get_permalink( get_page_by_title('Contact Us') ); ?>">Contact Us &raquo;</a></li>
   	        </ul>
           </div>

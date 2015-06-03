@@ -20,8 +20,7 @@ function simple_breadcrumb() {
 	if (!is_front_page()) {
 		echo '<a style="margin-right:5px; margin-left:5px;" href="';
 		echo get_option('home');
-		echo '">';
-		bloginfo('name');
+		echo '">Home';
 		echo "</a> ".$separator;
 		if ( is_category() || is_single() ) {
 			the_category(', ');

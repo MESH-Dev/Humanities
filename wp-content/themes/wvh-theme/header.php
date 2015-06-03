@@ -6,6 +6,7 @@
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
 <?php wp_head(); ?>
 </head>
@@ -33,9 +34,16 @@
 						</div>
 			    	<div id="navbar" class="navbar">
 			    		<?php wp_nav_menu( array( 'theme_location' => 'mainmenu', 'menu_class' => 'nav navbar-nav', 'walker' => new wp_bootstrap_navwalker() ) ); ?>
+							<div class="mobile-nav">
+								<span class="menu-icon">Menu</span>
+								<span class="close-icon" style="display:none;"><i class="fa fa-times"></i></span>
+							</div>
 			    		<a href="http://www.wvencyclopedia.org/" target="_blank" class="ewv-link">e-WV</a>
           	</div><!--/.nav-collapse -->
 
+					</div>
+					<div class="full-mobile-nav">
+						<?php wp_nav_menu( array( 'theme_location' => 'mainmenu', 'menu_class' => 'nav navbar-nav', 'walker' => new wp_bootstrap_navwalker() ) ); ?>
 					</div>
 	    	</div>
 	    </div>

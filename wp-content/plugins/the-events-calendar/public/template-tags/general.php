@@ -588,7 +588,7 @@ if ( class_exists( 'TribeEvents' ) ) {
 				$attrs['data-startofweek'] = get_option( 'start_of_week' );
 				break;
 			case 'list.php' :
-				$attrs['data-startofweek'] = get_option( 'start_of_week' );				
+				$attrs['data-startofweek'] = get_option( 'start_of_week' );
 				$attrs['data-view'] = 'list';
 				if ( tribe_is_upcoming() ) {
 					$attrs['data-baseurl'] = tribe_get_listview_link( false );
@@ -1004,11 +1004,11 @@ if ( class_exists( 'TribeEvents' ) ) {
 				$schedule .= tribe_get_end_date( $event, true, $format2ndday );
 				$schedule .= '<span class="value-title" title="' . $microformatEndFormat . '"></span>';
 			} else {
-				$schedule .= tribe_get_start_date( $event, false, $format ) . ( $time ? $datetime_separator . tribe_get_start_date( $event, false, $time_format ) : '' );
+				$schedule .= tribe_get_start_date( $event, false, $format );
 				$schedule .= '<span class="value-title" title="' . $microformatStartFormat . '"></span>';
 				$schedule .= '</span>' . $time_range_separator;
 				$schedule .= '<span class="date-end dtend">';
-				$schedule .= tribe_get_end_date( $event, false, $format2ndday ) . ( $time ? $datetime_separator . tribe_get_end_date( $event, false, $time_format ) : '' );
+				$schedule .= tribe_get_end_date( $event, false, $format2ndday );
 				$schedule .= '<span class="value-title" title="' . $microformatEndFormat . '"></span>';
 			}
 
@@ -1017,20 +1017,19 @@ if ( class_exists( 'TribeEvents' ) ) {
 			$schedule .= '<span class="value-title" title="' . $microformatStartFormat . '"></span>';
 		} else { // single day event
 			if ( tribe_get_start_date( $event, false, 'g:i A' ) === tribe_get_end_date( $event, false, 'g:i A' ) ) { // Same start/end time
-				$schedule .= tribe_get_start_date( $event, false, $format ) . ( $time ? $datetime_separator . tribe_get_start_date( $event, false, $time_format ) : '' );
+				$schedule .= tribe_get_start_date( $event, false, $format );
 				$schedule .= '<span class="value-title" title="' . $microformatStartFormat . '"></span>';
 			} else { // defined start/end time
-				$schedule .= tribe_get_start_date( $event, false, $format ) . ( $time ? $datetime_separator . tribe_get_start_date( $event, false, $time_format ) : '' );
+				$schedule .= tribe_get_start_date( $event, false, $format );
 				$schedule .= '<span class="value-title" title="' . $microformatStartFormat . '"></span>';
-				$schedule .= '</span>' . ( $show_end_time ? $time_range_separator : '' );
-				$schedule .= '<span class="end-time dtend">';
-				$schedule .= ( $show_end_time ? tribe_get_end_date( $event, false, $time_format ) : '' ) . '<span class="value-title" title="' . $microformatEndFormat . '"></span>';
+				$schedule .= '</span>';
+
 			}
 		}
 
-		$schedule .= '</span>';
 
-		$schedule = $before . $schedule . $after;
+
+		$schedule = $before . $schedule;
 
 		return apply_filters( 'tribe_events_event_schedule_details', $schedule );
 	}
