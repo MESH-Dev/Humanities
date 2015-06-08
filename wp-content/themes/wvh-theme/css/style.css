@@ -1522,3 +1522,21 @@ padding: 0px 10px 10px 0px;
 	font-size: 20px;
 	line-height: 24px;
 }
+
+.small-mobile-nav .navbar-nav > li > ul.sub-menu {
+	list-style: none;
+}
+
+.small-mobile-nav .navbar-nav > li > ul.sub-menu > li > a {
+	padding-left: 20px;
+	color: #3d4235;
+	font-size: 16px;
+}
+
+.small-mobile-nav .navbar-nav > li > ul.sub-menu > li {
+	padding-bottom: 5px;
+}
+
+.small-mobile-nav .navbar-nav > li > ul.sub-menu > li.current_page_item a {
+	color: #76908f;
+}
