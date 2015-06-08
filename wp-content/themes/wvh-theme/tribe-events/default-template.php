@@ -15,9 +15,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 get_header(); ?>
+
 <?php
 
-$eventspage = get_page_by_title('Whats Happening');
+$eventspage = get_page_by_title("What's Happening");
 $custom_query = new WP_Query('page_id='.$eventspage->ID);
 while($custom_query->have_posts()) : $custom_query->the_post();
 

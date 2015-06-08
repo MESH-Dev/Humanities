@@ -64,11 +64,11 @@ if ( tribe_get_zip( $postId ) ) {
 }
 
 // Get our country
-if ( tribe_get_country( $postId ) ) {
-	if ( count( $address_out ) ) {
-		$address_out[] = ' <span class="country-name">' . tribe_get_country( $postId ) . '</span>';
-	}
-}
+// if ( tribe_get_country( $postId ) ) {
+// 	if ( count( $address_out ) ) {
+// 		$address_out[] = ' <span class="country-name">' . tribe_get_country( $postId ) . '</span>';
+// 	}
+// }
 
 echo implode( '', $address_out );
 

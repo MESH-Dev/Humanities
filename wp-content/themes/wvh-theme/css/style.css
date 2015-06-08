@@ -815,7 +815,7 @@ font-family:"NerisBlack", Arial, Sans-Serif;
 	display: block;
 	position: relative;
 	margin-bottom: 20px;
-	margin-top: 1100px;
+	margin-top:800px;
 }
 
 @media screen and (max-width: 991px) {
@@ -918,6 +918,7 @@ input[type=submit].brown, input[type=button].brown{
  	color:#232323!important;
 	font-weight: bold;
 	font-family: "NerisBlack", Arial, Sans-Serif;
+	opacity: 1;
  }
  .dropdown-menu li a:after {
     content: ' \00bb';
@@ -1350,7 +1351,7 @@ body.events-list .contentpage.titlebar{
 
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 768px) {
 	.mobile-nav {
 		display: none;
 	}
@@ -1360,6 +1361,10 @@ body.events-list .contentpage.titlebar{
 	#menu-main-navigation {
 		display: none;
 	}
+
+}
+
+@media screen and (max-width: 767px) {
 	.mobile-nav {
 		display: block;
 		color: white;
@@ -1374,10 +1379,11 @@ body.events-list .contentpage.titlebar{
 		position: absolute;
 		right: 0;
 		width: 100px;
+		cursor: pointer;
 	}
 }
 
-#menu-main-navigation-1.navbar-nav {
+#menu-main-navigation-1.navbar-nav, #menu-main-navigation-2.navbar-nav {
 	float: left;
 }
 
@@ -1423,7 +1429,7 @@ padding: 0px 10px 10px 0px;
 	margin-left: 22px;
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (min-width: 768px) and (max-width: 991px) {
 	.full-mobile-nav {
 		background: #C1C1A6;
 		padding-right: 0px;
@@ -1449,4 +1455,70 @@ padding: 0px 10px 10px 0px;
 	.full-mobile-nav {
 		display: none;
 	}
+}
+
+
+@media screen and (max-width: 768px) {
+	.full-mobile-nav {
+		display: none;
+	}
+}
+
+.search-form {
+	float: left;
+	width: 100%;
+}
+
+.screen-reader-text {
+	display: none;
+}
+
+.form-group {
+	float: left;
+}
+
+.search-field {
+	height: 35px;
+	float: left;
+	margin-right: 10px;
+	font-family: "NerisBlack", Arial, Sans-Serif;
+}
+
+.search-submit {
+	height: 35px;
+	float: left;
+}
+
+@media screen and (max-width: 768px) {
+
+	.small-mobile-nav {
+		background: #C1C1A6;
+		padding-right: 0px;
+		float: left;
+		width: 100%;
+		position: relative;
+		margin-top: 10px;
+		height: 100%;
+		display: block;
+
+	}
+
+	.small-mobile-nav .navbar-nav {
+		margin: 0;
+	}
+
+	.small-mobile-nav .navbar-nav a {
+		background-color: #C1C1A6 !important;
+	}
+
+}
+
+.small-mobile-nav {
+	display: none;
+}
+
+.small-mobile-nav .navbar-nav > li > a {
+	color: white;
+	font-size: 20px;
+	line-height: 24px;
 }

@@ -38,9 +38,14 @@
               <?php if($sidebar_heading != "") { ?>
 
                 <div class="text">
-                  <a href="<?php echo $sidebar_link_url; ?>"><h1><?php echo $sidebar_heading; ?></h1></a>
+                  <a href="<?php echo $sidebar_link_url; ?>" <?php if (get_sub_field('open_in_new_tab')) { echo "target='_blank'"; } ?>><h1><?php echo $sidebar_heading; ?></h1></a>
                   <p><?php echo $sidebar_text; ?></p>
-                  <p><a href="<?php echo $sidebar_link_url; ?>"><?php echo $sidebar_link_text; ?> &raquo;</a></p>
+
+                  <?php if ($sidebar_link_text != "") { ?>
+
+                    <p><a href="<?php echo $sidebar_link_url; ?>" <?php if (get_sub_field('open_in_new_tab')) { echo "target='_blank'"; } ?>><?php echo $sidebar_link_text; ?> &raquo;</a></p>
+
+                  <?php } ?>
                 </div>
 
               <?php } ?>

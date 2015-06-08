@@ -43,7 +43,7 @@ get_header(); ?>
 									}
 					        		</style>";
 					        echo '<div class="banner-caption-top">'.$banner_caption_top.'</div>
-						            <div class="banner-caption-bottom">'.$banner_caption_bottom.'</div>
+
 					        ';
 					    endwhile;
 
@@ -119,13 +119,13 @@ get_header(); ?>
 
                     <div class="text">
                       <?php if($title != "") { ?>
-                        <a href="<?php echo $link_address; ?>"><h1><?php echo $title; ?></h1></a>
+                        <a href="<?php echo $link_address; ?>"  <?php if (get_sub_field('open_in_new_tab')) { echo "target='_blank'"; } ?>><h1><?php echo $title; ?></h1></a>
                       <?php } ?>
                       <?php if ($description != "") { ?>
                         <p><?php echo $description ?></p>
                       <?php } ?>
                       <?php if (($link_address != "") && ($link_text != "")) { ?>
-                        <p><a href="<?php echo $link_address; ?>"><?php echo $link_text; ?> &raquo;</a></p>
+                        <p><a href="<?php echo $link_address; ?>"  <?php if (get_sub_field('open_in_new_tab')) { echo "target='_blank'"; } ?>><?php echo $link_text; ?> &raquo;</a></p>
                       <?php } ?>
                     </div>
 
@@ -137,13 +137,13 @@ get_header(); ?>
                     <div class="text">
 
                       <?php if($title != "") { ?>
-                        <a href="<?php echo $link_address; ?>"><h1><?php echo $title; ?></h1></a>
+                        <a href="<?php echo $link_address; ?>"  <?php if (get_sub_field('open_in_new_tab')) { echo "target='_blank'"; } ?>><h1><?php echo $title; ?></h1></a>
                       <?php } ?>
                       <?php if ($description != "") { ?>
                         <p><?php echo $description; ?></p>
                       <?php } ?>
                       <?php if (($link_address != "") && ($link_text != "")) { ?>
-                        <p><a href="<?php echo $link_address; ?>"><?php echo $link_text; ?> &raquo;</a></p>
+                        <p><a href="<?php echo $link_address; ?>"  <?php if (get_sub_field('open_in_new_tab')) { echo "target='_blank'"; } ?>><?php echo $link_text; ?> &raquo;</a></p>
                       <?php } ?>
                     </div>
 
@@ -231,7 +231,7 @@ get_header(); ?>
                               <p><?php echo $description ?></p>
                             <?php } ?>
                             <?php if (($link_address != "") && ($link_text != "")) { ?>
-                              <p><a href="<?php echo $link_address; ?>"><?php echo $link_text; ?> &raquo;</a></p>
+                              <p><a href="<?php echo $link_address; ?>"  <?php if (get_sub_field('open_in_new_tab')) { echo "target='_blank'"; } ?>><?php echo $link_text; ?> &raquo;</a></p>
                             <?php } ?>
                           </div>
 
@@ -249,7 +249,7 @@ get_header(); ?>
                               <p><?php echo $description; ?></p>
                             <?php } ?>
                             <?php if (($link_address != "") && ($link_text != "")) { ?>
-                              <p><a href="<?php echo $link_address; ?>"><?php echo $link_text; ?> &raquo;</a></p>
+                              <p><a href="<?php echo $link_address; ?>"  <?php if (get_sub_field('open_in_new_tab')) { echo "target='_blank'"; } ?>><?php echo $link_text; ?> &raquo;</a></p>
                             <?php } ?>
                           </div>
 

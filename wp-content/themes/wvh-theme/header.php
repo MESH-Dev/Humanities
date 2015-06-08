@@ -45,6 +45,9 @@
 					<div class="full-mobile-nav">
 						<?php wp_nav_menu( array( 'theme_location' => 'mainmenu', 'menu_class' => 'nav navbar-nav', 'walker' => new wp_bootstrap_navwalker() ) ); ?>
 					</div>
+					<div class="small-mobile-nav">
+						<?php wp_nav_menu( array( 'theme_location' => 'mainmenu', 'menu_class' => 'nav navbar-nav', 'sub_menu' => true ) ); ?>
+					</div>
 	    	</div>
 	    </div>
 	</div>

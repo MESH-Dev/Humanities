@@ -23,6 +23,8 @@ jQuery(document).ready(function() {
   jQuery('.mobile-nav').click(function() {
     jQuery('.menu-icon').toggle();
     jQuery('.close-icon').toggle();
+
+    jQuery('.small-mobile-nav').toggle();
   });
 
 });
