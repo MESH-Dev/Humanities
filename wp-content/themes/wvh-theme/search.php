@@ -7,7 +7,7 @@ get_header();?>
 
 <style>
 		.jumbotron {
-			background: url("http://localhost/humanities/wp-content/uploads/2015/04/Bear-Rocks-DEF1.jpg");
+			background: url("http://humanities.bkfk-t5yk.accessdomain.com/wp-content/uploads/2015/04/Bear-Rocks-DEF1.jpg");
 			min-height: 400px;
 			background-position: right center;
 			background-size: cover;

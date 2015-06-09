@@ -364,6 +364,8 @@ function calendar_widgets_init() {
 }
 add_action( 'widgets_init', 'calendar_widgets_init' );
 
+
+
 function add_external_calendar_events() {
 
 		$servername = "localhost";
@@ -521,3 +523,5 @@ function add_external_calendar_events() {
 		$conn->close();
 
 }
+
+add_action('add_events', 'add_external_calendar_events');
