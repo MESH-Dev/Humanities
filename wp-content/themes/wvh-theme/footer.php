@@ -4,7 +4,7 @@
         <div class="col-md-3">
           <div class="footer-block">
             <img src="<?php echo get_template_directory_uri(); ?>/img/online-catalog.png" class="alignleft">
-        		<p>Get your copy of the Encyclopedia and DVD In our <a href="http://www.wvencyclopedia.org/products" target="_blank">Online Store &raquo;</a></p>
+        		<p>Get your West Virginia Encyclopedia and DVD in our <a href="http://www.wvencyclopedia.org/products" target="_blank">Online Store &raquo;</a></p>
           </div>
         </div>
         <div class="col-md-3 middle">
@@ -18,7 +18,7 @@
         </div>
         <div class="col-md-6">
           <div class="footer-block last">
-            <span class="footer-address">West Virginia Humanties Council<br/>1310 Kanawah Blvd. E, Charleston, West Virgina  25301</span>
+            <span class="footer-address">West Virginia Humanties Council<br/>1310 Kanawha Blvd. E, Charleston, West Virgina  25301</span>
           	<span class="footer-phone">304-346-8500 (T) | 304-346-8504 (F)</span>
           </div>
           <div class="search-form">

@@ -1525,12 +1525,21 @@ padding: 0px 10px 10px 0px;
 
 .small-mobile-nav .navbar-nav > li > ul.sub-menu {
 	list-style: none;
+	margin-bottom: 10px;
 }
 
 .small-mobile-nav .navbar-nav > li > ul.sub-menu > li > a {
 	padding-left: 20px;
 	color: #3d4235;
 	font-size: 16px;
+}
+
+.small-mobile-nav .navbar-nav {
+	width: 100%;
+}
+
+.small-mobile-nav .navbar-nav > li {
+	border-bottom: 1px dashed white;
 }
 
 .small-mobile-nav .navbar-nav > li > ul.sub-menu > li {
