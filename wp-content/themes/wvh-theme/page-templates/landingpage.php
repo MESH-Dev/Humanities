@@ -44,7 +44,7 @@ get_header();?>
 							$caption = $grid_image['caption'];
 
 							// thumbnail
-							$thumb = $grid_image['sizes']['col-4'];
+							$thumb = $grid_image['sizes']['large'];
 
 							?>
 
