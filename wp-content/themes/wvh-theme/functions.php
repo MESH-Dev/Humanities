@@ -42,7 +42,9 @@ add_image_size('large', 720, '', true);
 add_image_size('col-3', 200, '', true);
 add_image_size('col-4', 277, '', true);
 
-
+@ini_set( 'upload_max_size' , '64M' );
+@ini_set( 'post_max_size', '64M');
+@ini_set( 'max_execution_time', '300' );
 
 function remove_menus(){
 
