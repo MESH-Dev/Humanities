@@ -47,6 +47,9 @@
 					</div>
 					<div class="small-mobile-nav">
 						<?php wp_nav_menu( array( 'theme_location' => 'mainmenu', 'menu_class' => 'nav navbar-nav' ) ); ?>
+						<div class="ewv-mobile">
+							<a href="http://www.wvencyclopedia.org/" target="_blank" class="ewv-link">e-WV</a>
+						</div>
 					</div>
 	    	</div>
 	    </div>

@@ -454,7 +454,6 @@ p a:hover {
 
 .top-nav li{
 	margin-right: 15px;
-	margin-left: 10px;
 	display: inline;
 	line-height: 18px;
 }
@@ -462,6 +461,27 @@ p a:hover {
 	font-size: 12px;
 	color: #B0AF93;
 }
+
+#menu-top-navigation {
+	margin-left: 5px;
+}
+
+@media screen and (max-width: 450px) {
+	.top-nav li{
+		margin-right: 5px;
+		display: inline;
+		line-height: 18px;
+	}
+
+	.top-nav li a {
+		font-size: 10px;
+	}
+
+	.top-nav li:after {
+		display: none;
+	}
+}
+
 .top-nav li:after {
     position: absolute; /* Prevent underline of arrow */
     padding-left:3px; /* Add a little space between text and arrow */
@@ -554,7 +574,7 @@ p a:hover {
 }
 
 @media screen and (max-width: 480px) {
-	.ewv-link {
+	.main-nav .ewv-link {
 		display: none;
 	}
 }
@@ -1529,7 +1549,7 @@ padding: 0px 10px 10px 0px;
 }
 
 .small-mobile-nav .navbar-nav > li > ul.sub-menu > li > a {
-	padding-left: 20px;
+
 	color: #3d4235;
 	font-size: 16px;
 }
@@ -1544,8 +1564,21 @@ padding: 0px 10px 10px 0px;
 
 .small-mobile-nav .navbar-nav > li > ul.sub-menu > li {
 	padding-bottom: 5px;
+	padding-left: 20px;
 }
 
 .small-mobile-nav .navbar-nav > li > ul.sub-menu > li.current_page_item a {
 	color: #76908f;
+}
+
+.ewv-mobile {
+	display: block;
+	float: left;
+	position: absolute;
+	top: 110px;
+	right: 10px;
+}
+
+.ewv-mobile a {
+	line-height: 10px;
 }
