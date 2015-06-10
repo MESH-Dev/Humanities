@@ -27,4 +27,13 @@ jQuery(document).ready(function() {
     jQuery('.small-mobile-nav').toggle();
   });
 
+
+  jQuery(window).on('resize', function(){
+      var win = jQuery(this); //this = window
+
+      if (win.width() >= 768) {
+        jQuery('.small-mobile-nav').hide();
+      }
+});
+
 });

@@ -89,6 +89,16 @@ if (wp_get_post_parent_id(get_the_ID()) == get_page_by_title('Grants')->ID || ge
   				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentyfifteen' ) . ' </span>',
   			) );
 
+				else :
+
+				?>
+
+				<header class="page-header">
+  				<h1 class="page-title"><?php printf( __( 'No search results for: %s', 'twentyfifteen' ), get_search_query() ); ?></h1>
+  			</header><!-- .page-header -->
+
+				<?php
+
   		endif;
   		?>
 
@@ -97,7 +107,9 @@ if (wp_get_post_parent_id(get_the_ID()) == get_page_by_title('Grants')->ID || ge
 
     <div class="col-md-4">
 
-
+			<div class="search-form side-search">
+				<?php get_search_form( ); ?>
+			</div>
 
     </div>
   </div>
