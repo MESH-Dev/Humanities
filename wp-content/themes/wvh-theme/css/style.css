@@ -1085,11 +1085,23 @@ padding: 5px 15px 6px 15px;
 	font-size: 17px;
 }
 
+.tribe-events-list-event-container .tribe-events-event-date.full-date .tribe-events-event-date-month {
+	font-size: 14px;
+}
+
 .tribe-events-list-event-container .tribe-events-event-date .tribe-events-event-date-day {
 	text-transform: uppercase;
 	color: #FFFFFF;
 	font-size: 25px;
 	font-weight: bold;
+}
+
+.tribe-events-list-event-container .tribe-events-event-date.full-date .tribe-events-event-date-day {
+	font-size: 16px;
+}
+
+.full-date-to {
+	color: white;
 }
 
 .tribe-events-list-event-container .tribe-events-event-meta {

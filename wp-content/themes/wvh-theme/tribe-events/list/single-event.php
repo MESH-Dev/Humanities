@@ -46,12 +46,26 @@ $organizer = tribe_get_organizer();
 	<div class="author <?php echo $has_venue_address; ?>">
 
 		<!-- Schedule & Recurrence Details -->
-		<div class="tribe-events-event-date">
-			<span class="tribe-events-event-date-month"><?php echo tribe_get_start_date(null, false, 'M') ?></span>
-			<span class="tribe-events-event-date-day"><?php echo tribe_get_start_date(null, false, 'd') ?></span>
-		</div>
+		<?php if (tribe_get_start_date(null, false, 'm-d-y') == tribe_get_end_date(null, false, 'm-d-y')) { ?>
 
-		
+			<div class="tribe-events-event-date">
+				<span class="tribe-events-event-date-month"><?php echo tribe_get_start_date(null, false, 'M') ?></span>
+				<span class="tribe-events-event-date-day"><?php echo tribe_get_start_date(null, false, 'd') ?></span>
+			</div>
+
+		<?php } else { ?>
+
+			<div class="tribe-events-event-date full-date">
+				<span class="tribe-events-event-date-month"><?php echo tribe_get_start_date(null, false, 'M') ?></span>
+				<span class="tribe-events-event-date-day"><?php echo tribe_get_start_date(null, false, 'd') ?></span><br/>
+				<span class="full-date-to">to</span><br/>
+				<span class="tribe-events-event-date-month"><?php echo tribe_get_end_date(null, false, 'M') ?></span>
+				<span class="tribe-events-event-date-day"><?php echo tribe_get_end_date(null, false, 'd') ?></span>
+			</div>
+
+		<?php } ?>
+
+
 
 	</div>
 </div><!-- .tribe-events-event-meta -->
