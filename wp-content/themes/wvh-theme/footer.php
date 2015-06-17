@@ -24,7 +24,7 @@
           <div class="search-form">
             <?php get_search_form( ); ?>
           </div>
-          <small>&copy; <?php echo date("Y"); ?> All Rights Reserved</small>
+          <small style="float:right; font-size: 70%;">&copy; <?php echo date("Y"); ?> All Rights Reserved</small>
         </div>
     </div>
   </div>
