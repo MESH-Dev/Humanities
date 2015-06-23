@@ -1612,5 +1612,9 @@ padding: 0px 10px 10px 0px;
 }
 
 .tribe-events-nav-next, .tribe-events-nav-previous {
-	display:none;
+	display:none !important;
+}
+
+#tribe-events-content hr {
+	display: none;
 }

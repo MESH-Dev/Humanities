@@ -14,6 +14,7 @@
   	        	<li><a href="<?php echo get_permalink( get_page_by_title('Our Historic Headquarters') ); ?>">Our Historic House &raquo;</a></li>
   	        	<li><a href="<?php echo get_permalink( get_page_by_title('Contact Us') ); ?>">Contact Us &raquo;</a></li>
   	        </ul>
+            <small style="font-size: 70%;">&copy; <?php echo date("Y"); ?> All Rights Reserved</small>
           </div>
         </div>
         <div class="col-md-6">
@@ -24,7 +25,6 @@
           <div class="search-form">
             <?php get_search_form( ); ?>
           </div>
-          <small style="float:right; font-size: 70%;">&copy; <?php echo date("Y"); ?> All Rights Reserved</small>
         </div>
     </div>
   </div>
