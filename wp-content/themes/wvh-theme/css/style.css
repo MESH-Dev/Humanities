@@ -1293,6 +1293,7 @@ body.events-list .contentpage.titlebar{
     font-family: "NerisBlack", Arial, Sans-Serif;
     color:#4f4e4d;
     font-size:14px;
+		display: none;
 }
 
 .tribe-events-content-filterbar input {
@@ -1608,4 +1609,8 @@ padding: 0px 10px 10px 0px;
 	.ewv-desktop {
 		display: none;
 	}
+}
+
+.tribe-events-nav-next, .tribe-events-nav-previous {
+	display:none;
 }
