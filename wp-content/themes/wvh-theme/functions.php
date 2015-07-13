@@ -366,8 +366,10 @@ add_action( 'widgets_init', 'calendar_widgets_init' );
 
 
 
-function add_external_calendar_events() {
 
+//Add new events from filemaker --- should be cron?
+function add_external_calendar_events() {
+		global $wpdb;
 		$servername = "localhost";
 		$username = "mesh";
 		$password = "Wasd1234!";
@@ -381,47 +383,72 @@ function add_external_calendar_events() {
 		    die("Connection failed: " . $conn->connect_error);
 		}
 
+		/* change character set to utf8 */
+		if (!mysqli_set_charset($conn, "utf8")) {
+		    printf("Error loading character set utf8: %s\n", mysqli_error($conn));
+		} else {
+		    mysqli_character_set_name($conn);
+		}
+
+		//------------------------------------------------------
+
+
 		// $sql = "SELECT * FROM events where wp_id is null";
-		$sql = "SELECT * FROM events where wp_id is null";
+		$sql = "SELECT * FROM events";
 		$result = $conn->query($sql);
+ 		$filemaker_id_arr = array();
+ 
 
 		if ($result->num_rows > 0) {
 		    // output data of each row
+		 
 		    while($row = $result->fetch_assoc()) {
-
+ 					$filemaker_id = 
+		     		//Sanitize in database
 					$id = $row["ID"];
 					$eventID = $row["EventID"];
-					$title = $row["Title"];
+					$title =  mysqli_real_escape_string($conn, $row["Title"]); 
 					$dateStart = $row["DateStart"];
 					$dateEnd = $row["DateEnd"];
 					$time = $row["Time"];
-					$description = $row["Description"];
-					$venue = $row["Venue"];
-					$venueStreet1 = $row["VenueStreet1"];
-					$venueStreet2 = $row["VenueStreet2"];
-					$venueCity = $row["VenueCity"];
+					$description =  mysqli_real_escape_string($conn, $row["Description"]);
+					$venue = mysqli_real_escape_string($conn,$row["Venue"]); 
+					$venueStreet1 = mysqli_real_escape_string($conn,$row["VenueStreet1"]); 
+					$venueStreet2 = mysqli_real_escape_string($conn,$row["VenueStreet2"]); 
+					$venueCity = mysqli_real_escape_string($conn,$row["VenueCity"]); 
 					$venueState = $row["VenueState"];
 					$venueZip = $row["VenueZip"];
-					$venueContact = $row["VenueContact"];
-					$venueEmail = $row["VenueEmail"];
-					$venuePhone = $row["VenuePhone"];
-					$venueURL = $row["VenueURL"];
-					$programType = $row["ProgramType"];
+					$venueContact = mysqli_real_escape_string($conn,$row["VenueContact"]); 
+					$venueEmail = mysqli_real_escape_string($conn,$row["VenueEmail"]); 
+					$venuePhone = mysqli_real_escape_string($conn,$row["VenuePhone"]); 
+					$venueURL = mysqli_real_escape_string($conn,$row["VenueURL"]); 
+					$programType = mysqli_real_escape_string($conn,$row["ProgramType"]); 
 					$filename = $row["Filename"];
+					$wp_id = $row["wp_id"];
 
 					// Create post object
 					$my_post = array(
-					'post_title'    => $title,
-					'post_content'  => $description,
-					'post_status'   => 'publish',
-					'post_type' => 'tribe_events'
+						'ID'           => $wp_id,
+						'post_title'    => $title,
+						'post_content'  => $description,
+						'post_status'   => 'publish',
+						'post_type' => 'tribe_events'
 					);
 
 					// Insert the post into the database
-					$post_id = wp_insert_post( $my_post );
+					$post_id = wp_update_post( $my_post, true);
 
+					//Push WPID Filemaker Table Arrays
+					array_push($filemaker_id_arr, $post_id);
+
+					//print_r($post_id);
+					if( is_wp_error( $post_id ) ) {
+					   $errors  =$post_id->get_error_message();
+					   //print_r($errors);
+					   //$conn->query("UPDATE events set VenueStreet2= $errors where ID = $id");
+					}
+ 
 					// VENUE
-
 					$dateStart = $dateStart . " " . $time;
 
 					update_post_meta($post_id, "_EventStartDate", $dateStart);
@@ -512,15 +539,34 @@ function add_external_calendar_events() {
 							wp_insert_term($programType, 'tribe_events_cat');
 							wp_set_object_terms($post_id, $programType, 'tribe_events_cat');
 						}
-
-
 					}
 
 		    }
-		} else {
-
+		} 
+		else {
+			//If no rows....
 		}
 		$conn->close();
+
+		//find all post ids from wp tables
+		$wp_id_arr = array();
+		$wp_events = $wpdb->get_results( "SELECT ID FROM $wpdb->posts WHERE post_type = 'tribe_events' ");
+
+		//loop through wp_ids and delete posts if not in filemaker table
+		foreach ( $wp_events as $wp_event_id ) 
+		{
+			if(!in_array($wp_event_id->ID,$filemaker_id_arr)){
+				wp_delete_post( $wp_event_id->ID, true);
+			}
+			else
+				//array_push($wp_id_arr, $wp_event_id->ID);
+		}
+
+		//print_r($filemaker_id_arr);
+		//print_r($wp_id_arr);
+
+
+
 
 }
 
